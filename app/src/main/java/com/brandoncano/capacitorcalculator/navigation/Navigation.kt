@@ -2,9 +2,7 @@ package com.brandoncano.capacitorcalculator.navigation
 
 import android.content.Context
 import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutHorizontally
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -17,9 +15,9 @@ import com.brandoncano.capacitorcalculator.model.CapacitorViewModelFactory
 import com.brandoncano.capacitorcalculator.model.capacitorlegacy.CapacitorCapacitorViewModel
 import com.brandoncano.capacitorcalculator.navigation.calculators.capacitorCodeValuesScreen
 import com.brandoncano.capacitorcalculator.navigation.calculators.smdScreen
+import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
 import com.brandoncano.capacitorcalculator.ui.screens.capacitorlegacy.CapacitorCalculatorScreen
 import com.brandoncano.capacitorcalculator.ui.screens.capacitorvalues.CapacitorValuesScreen
-import com.brandoncano.capacitorcalculator.ui.screens.chart.ChartScreen
 import com.brandoncano.capacitorcalculator.ui.screens.information.InformationScreen
 import com.brandoncano.capacitorcalculator.ui.screens.informationdetails.InformationDetailsScreen
 import com.brandoncano.sharedcomponents.data.Apps
@@ -42,11 +40,22 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
     ) {
         aboutScreen(navController)
         capacitorCodeValuesScreen(navController)
+        learnCommonCodes(navController)
         homeScreen(navController, onOpenThemeDialog)
         smdScreen(navController)
         // from shared library
         donateScreen(navController)
         viewOurAppsScreen(navController, Apps.Capacitor)
+
+        composable(
+            route = Screen.CapacitorValues.route,
+            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
+            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
+        ) {
+            CapacitorValuesScreen(context, navController)
+        }
+
+
 
         // TODO migrate these screens
         composable(
@@ -58,20 +67,7 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
             val capacitor = viewModel.getCapacitorLiveData()
             CapacitorCalculatorScreen(context, navController, viewModel, capacitor)
         }
-        composable(
-            route = Screen.CapacitorValues.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            CapacitorValuesScreen(context, navController)
-        }
-        composable(
-            route = Screen.CommonCodes.route,
-            enterTransition = { slideInVertically(initialOffsetY = { it }) },
-            exitTransition = { slideOutVertically(targetOffsetY = { it }) },
-        ) {
-            ChartScreen(context, navController)
-        }
+
 
         composable(
             route = Screen.Information.route,

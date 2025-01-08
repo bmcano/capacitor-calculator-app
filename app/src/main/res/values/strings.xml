@@ -33,12 +33,12 @@
     <string name="capacitor_values_voltage_header">Voltage Rating</string>
     <string name="capacitor_values_voltage_code">Code</string>
     <string name="capacitor_values_voltage_values">Voltage (V)</string>
-    <!-- chart screen -->
-    <string name="chart_title">Common Codes</string>
-    <string name="chart_code">Code</string>
-    <string name="chart_pf">pF</string>
-    <string name="chart_nf">nF</string>
-    <string name="chart_uf">µF</string>
+    <!-- common codes screen -->
+    <string name="common_code_title">Common Codes</string>
+    <string name="common_codes_code">Code</string>
+    <string name="common_codes_pf">pF</string>
+    <string name="common_codes_nf">nF</string>
+    <string name="common_codes_uf">µF</string>
     <!-- home screen -->
     <string name="home_title">Capacitor Calculator</string>
     <string name="home_calculators_header_text">Calculators</string>

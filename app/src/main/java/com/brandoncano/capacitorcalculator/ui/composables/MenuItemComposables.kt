@@ -64,6 +64,7 @@ fun AboutAppMenuItem(navController: NavController, showMenu: MutableState<Boolea
     )
 }
 
+@Deprecated("")
 @Composable
 fun ClearSelectionsMenuItem(onClick: (() -> Unit)) {
     DropdownMenuItem(
@@ -73,6 +74,7 @@ fun ClearSelectionsMenuItem(onClick: (() -> Unit)) {
     )
 }
 
+@Deprecated("")
 @Composable
 fun FeedbackMenuItem(context: Context, showMenu: MutableState<Boolean>) {
     DropdownMenuItem(
@@ -85,6 +87,7 @@ fun FeedbackMenuItem(context: Context, showMenu: MutableState<Boolean>) {
     )
 }
 
+@Deprecated("")
 @Composable
 fun ShareMenuItem(text: String, context: Context, showMenu: MutableState<Boolean>) {
     DropdownMenuItem(
