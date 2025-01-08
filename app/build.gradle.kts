@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin)
     alias(libs.plugins.jetbrains.kotlin.compose)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
@@ -76,4 +77,6 @@ dependencies {
     // external libraries
     implementation(libs.ostermiller.util) // Job: can count number of sig figs in a string and round
     implementation(libs.bmcano.util)
+    // jetbrains
+    implementation(libs.kotlinx.serialization.json)
 }

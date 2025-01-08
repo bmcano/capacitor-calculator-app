@@ -10,44 +10,26 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import com.brandoncano.capacitorcalculator.R
-import com.brandoncano.capacitorcalculator.navigation.InformationDetails
+import com.brandoncano.capacitorcalculator.data.CapacitorType
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 import com.brandoncano.sharedcomponents.text.textStyleHeadline
 
 @Composable
-fun InformationDetailsScreen(informationDetails: InformationDetails) {
+fun InformationDetailsScreen(
+    type: CapacitorType,
+    onNavigateBack: () -> Unit,
+) {
     Surface(modifier = Modifier.fillMaxSize()) {
-        when (informationDetails) {
-            InformationDetails.Ceramic -> CeramicView()
-            InformationDetails.Film -> FilmView()
-            InformationDetails.Electrolytic -> ElectrolyticView()
-            InformationDetails.Polymer -> PolymerView()
-            InformationDetails.SuperCapacitor -> SuperCapacitorView()
-            InformationDetails.Mica -> MicaView()
-            InformationDetails.Variable -> VariableView()
-            InformationDetails.SomethingWentWrong -> SomethingWentWrong()
+        when (type) {
+            CapacitorType.Ceramic -> CeramicView()
+            CapacitorType.Film -> FilmView()
+            CapacitorType.Electrolytic -> ElectrolyticView()
+            CapacitorType.Polymer -> PolymerView()
+            CapacitorType.SuperCapacitor -> SuperCapacitorView()
+            CapacitorType.Mica -> MicaView()
+            CapacitorType.Variable -> VariableView()
         }
     }
 }
 
-@Composable
-fun SomethingWentWrong() {
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        Text(
-            text = stringResource(id = R.string.error_something_went_wrong),
-            style = textStyleHeadline()
-        )
-    }
-}
-
-@AppScreenPreviews
-@Composable
-private fun SomethingWentWrongPreview() {
-    CapacitorCalculatorTheme {
-        InformationDetailsScreen(InformationDetails.SomethingWentWrong)
-    }
-}

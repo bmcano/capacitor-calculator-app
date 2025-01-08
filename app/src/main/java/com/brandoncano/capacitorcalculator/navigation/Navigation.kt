@@ -15,10 +15,12 @@ import com.brandoncano.capacitorcalculator.model.CapacitorViewModelFactory
 import com.brandoncano.capacitorcalculator.model.capacitorlegacy.CapacitorCapacitorViewModel
 import com.brandoncano.capacitorcalculator.navigation.calculators.capacitorCodeValuesScreen
 import com.brandoncano.capacitorcalculator.navigation.calculators.smdScreen
+import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypeDetails
+import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypes
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorValues
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
 import com.brandoncano.capacitorcalculator.ui.screens.capacitorlegacy.CapacitorCalculatorScreen
-import com.brandoncano.capacitorcalculator.ui.screens.information.InformationScreen
+import com.brandoncano.capacitorcalculator.ui.screens.information.CapacitorTypesScreen
 import com.brandoncano.capacitorcalculator.ui.screens.informationdetails.InformationDetailsScreen
 import com.brandoncano.sharedcomponents.data.Apps
 import com.brandoncano.sharedcomponents.navigation.SharedScreens
@@ -41,13 +43,14 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
         aboutScreen(navController)
         capacitorCodeValuesScreen(navController)
         homeScreen(navController, onOpenThemeDialog)
+        learnCapacitorTypes(navController)
+        learnCapacitorTypeDetails(navController)
         learnCapacitorValues(navController)
         learnCommonCodes(navController)
         smdScreen(navController)
         // from shared library
         donateScreen(navController)
         viewOurAppsScreen(navController, Apps.Capacitor)
-
 
 
 
@@ -64,22 +67,8 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
         }
 
 
-        composable(
-            route = Screen.Information.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            InformationScreen(context, navController)
-        }
-        composable(
-            route = "${Screen.InformationDetails.route}/{arg1}",
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) { backStackEntry ->
-            val arg1 = backStackEntry.arguments?.getString("arg1") ?: ""
-            val informationDetails = InformationDetails.fromRoute(arg1)
-            InformationDetailsScreen(informationDetails)
-        }
+
+
     }
 }
 
@@ -104,7 +93,7 @@ fun navigateToCommonCodes(navController: NavHostController) {
 }
 
 fun navigateToCapacitorTypes(navController: NavHostController) {
-    navController.navigate(Screen.Information.route)
+    navController.navigate(Screen.CapacitorTypes.route)
 }
 
 fun navigateToCapacitorValues(navController: NavHostController) {
@@ -112,7 +101,7 @@ fun navigateToCapacitorValues(navController: NavHostController) {
 }
 
 fun navigateToOurApps(navController: NavHostController) {
-    navController.navigate(Screen.ViewOurApps.route)
+    navController.navigate(SharedScreens.ViewOurApps.route)
 }
 
 fun navigateToDonate(navController: NavHostController) {

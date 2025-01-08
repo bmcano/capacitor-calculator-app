@@ -9,6 +9,7 @@ compose-bom = "2024.12.01" # 1/8/25
 coreKtx = "1.15.0" # 1/8/25
 gson = "2.10.1" # 7/18/24
 junit = "4.13.2" # 7/7/24
+kotlinxSerializationJson = "1.6.3" # 1/8/2025
 material3 = "1.3.1" # 1/8/25
 navigation-compose = "2.8.5" # 1/8/25
 ostermiller = "1.07.00" # 7/21/24
@@ -42,6 +43,8 @@ accompanist-pager = { module = "com.google.accompanist:accompanist-pager", versi
 accompanist-pager-indicators = { module = "com.google.accompanist:accompanist-pager-indicators", version.ref = "pager" }
 # unit testing
 junit = { module = "junit:junit", version.ref = "junit" }
+# kotlin
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 # misc
 ostermiller-util = { module = "org.ostermiller:utils", version.ref = "ostermiller" }
 bmcano-util = { module = "com.github.bmcano:AndroidAppSharedComponents", version.ref = "bmcano" }
@@ -51,4 +54,5 @@ android-application = { id = "com.android.application", version.ref = "agp" }
 android-library = { id = "com.android.library", version.ref = "agp" }
 jetbrains-kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 jetbrains-kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+jetbrains-kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 gradle-ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint" }

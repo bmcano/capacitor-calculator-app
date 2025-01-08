@@ -12,7 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
-import com.brandoncano.capacitorcalculator.navigation.InformationDetails
+import com.brandoncano.capacitorcalculator.data.CapacitorType
+import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 
@@ -46,5 +47,10 @@ fun SuperCapacitorView() {
 @AppScreenPreviews
 @Composable
 fun SuperCapacitorPreview() {
-    InformationDetailsScreen(InformationDetails.SuperCapacitor)
+    CapacitorCalculatorTheme {
+        InformationDetailsScreen(
+            type = CapacitorType.SuperCapacitor,
+            onNavigateBack = {},
+        )
+    }
 }

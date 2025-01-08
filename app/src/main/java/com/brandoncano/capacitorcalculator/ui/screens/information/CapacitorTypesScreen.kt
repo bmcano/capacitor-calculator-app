@@ -1,73 +1,74 @@
 package com.brandoncano.capacitorcalculator.ui.screens.information
 
-import android.content.Context
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Surface
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
 import com.brandoncano.capacitorcalculator.R
-import com.brandoncano.capacitorcalculator.navigation.InformationDetails
-import com.brandoncano.capacitorcalculator.navigation.Screen
-import com.brandoncano.capacitorcalculator.ui.MainActivity
-import com.brandoncano.capacitorcalculator.ui.composables.AboutAppMenuItem
-import com.brandoncano.capacitorcalculator.ui.composables.FeedbackMenuItem
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
 import com.brandoncano.sharedcomponents.composables.AppDivider
-import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
+import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
-import com.brandoncano.sharedcomponents.text.textStyleBody
 import com.brandoncano.sharedcomponents.text.textStyleCaption
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
 
 @Composable
-fun InformationScreen(context: Context, navController: NavController) {
-    Surface(modifier = Modifier.fillMaxSize()) {
-        ContentView(context, navController)
+fun CapacitorTypesScreen(
+    onNavigateBack: () -> Unit,
+    onCapacitorTypeClicks: List<() -> Unit>,
+) {
+    Scaffold(
+        topBar = {
+            AppTopAppBar(
+                titleText = stringResource(R.string.information_title),
+                navigationIcon =  Icons.Filled.Close,
+                onNavigateBack = onNavigateBack,
+            )
+        },
+    ) { paddingValues ->
+        CapacitorTypesScreenContent(
+            paddingValues = paddingValues,
+            onCapacitorTypeClicks = onCapacitorTypeClicks,
+        )
     }
 }
 
 @Composable
-private fun ContentView(context: Context, navController: NavController) {
-    val interactionSource = remember { MutableInteractionSource() }
-    val showMenu = remember { mutableStateOf(false) }
+private fun CapacitorTypesScreenContent(
+    paddingValues: PaddingValues,
+    onCapacitorTypeClicks: List<() -> Unit>,
+) {
+    val sidePadding = dimensionResource(R.dimen.app_side_padding)
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState()),
-        horizontalAlignment = Alignment.Start
+            .verticalScroll(rememberScrollState())
+            .padding(paddingValues)
+            .padding(horizontal = sidePadding),
+        horizontalAlignment = Alignment.Start,
     ) {
-        AppMenuTopAppBar(
-            stringResource(id = R.string.information_title),
-            interactionSource,
-            showMenu
-        ) {
-            FeedbackMenuItem(context, showMenu)
-            AboutAppMenuItem(navController, showMenu)
-        }
         Text(
             text = stringResource(id = R.string.information_header_text),
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
-            style = textStyleBody().onSurfaceVariant(),
-        )
-        AppDivider(
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp),
+            modifier = Modifier.padding(vertical = 24.dp),
+            style = textStyleHeadline().onSurfaceVariant(),
         )
         // Note: Order and categorization was done similar to Wikipedia
-        ArrowButtonCardWithSubText(
+        ArrowCardButtonWithSubText(
             cardTexts = listOf(
                 stringResource(id = R.string.information_ceramic_header),
                 stringResource(id = R.string.information_film_header),
@@ -109,33 +110,24 @@ private fun ContentView(context: Context, navController: NavController) {
                     stringResource(id = R.string.information_variable_subtext_5),
                 ),
             ),
-            onClicks = listOf(
-                { navController.navigate("${Screen.InformationDetails.route}/${InformationDetails.Ceramic.route}") },
-                { navController.navigate("${Screen.InformationDetails.route}/${InformationDetails.Film.route}") },
-                { navController.navigate("${Screen.InformationDetails.route}/${InformationDetails.Electrolytic.route}") },
-                { navController.navigate("${Screen.InformationDetails.route}/${InformationDetails.Polymer.route}") },
-                { navController.navigate("${Screen.InformationDetails.route}/${InformationDetails.SuperCapacitor.route}") },
-                { navController.navigate("${Screen.InformationDetails.route}/${InformationDetails.Mica.route}") },
-                { navController.navigate("${Screen.InformationDetails.route}/${InformationDetails.Variable.route}") },
-            )
+            onClicks = onCapacitorTypeClicks,
         )
-        AppDivider(
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp),
-        )
+        AppDivider(modifier = Modifier.padding(vertical = 24.dp))
         Text(
             text = stringResource(id = R.string.information_footer_text),
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp),
             style = textStyleCaption().onSurfaceVariant(),
         )
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(48.dp))
     }
 }
 
 @AppScreenPreviews
 @Composable
-private fun InformationScreenPreview() {
-    val app = MainActivity()
+private fun CapacitorTypesPreview() {
     CapacitorCalculatorTheme {
-        InformationScreen(app, NavController(app))
+        CapacitorTypesScreen(
+            onNavigateBack = {},
+            onCapacitorTypeClicks = listOf(),
+        )
     }
 }

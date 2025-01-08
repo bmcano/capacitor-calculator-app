@@ -23,11 +23,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.sharedcomponents.composables.AppDivider
+import com.brandoncano.sharedcomponents.text.onSurfaceVariant
 import com.brandoncano.sharedcomponents.text.textStyleCallout
 import com.brandoncano.sharedcomponents.text.textStyleSubhead
 
 @Composable
-fun ArrowButtonCardWithSubText(
+fun ArrowCardButtonWithSubText(
     cardTexts: List<String>,
     subTexts: List<List<String>> = listOf(),
     onClicks: List<(() -> Unit)>,
@@ -35,12 +36,11 @@ fun ArrowButtonCardWithSubText(
     if (cardTexts.size != subTexts.size || cardTexts.size != onClicks.size) return
     Card(
         modifier = Modifier
-            .padding(start = 16.dp, end = 16.dp, top = 16.dp)
             .fillMaxWidth()
             .wrapContentHeight()
     ) {
         onClicks.forEachIndexed { index, onClick ->
-            CardRowViewWithSubText(onClick, cardTexts[index], subTexts[index])
+            CapacitorTypeListItem(cardTexts[index], subTexts[index], onClick)
             if (onClicks.size - 1 != index) {
                 AppDivider(modifier = Modifier.padding(start = 16.dp, end = 16.dp))
             }
@@ -49,10 +49,10 @@ fun ArrowButtonCardWithSubText(
 }
 
 @Composable
-private fun CardRowViewWithSubText(
-    onClick: (() -> Unit),
+private fun CapacitorTypeListItem(
     cardText: String,
     subText: List<String>,
+    onClick: () -> Unit,
 ) {
     Row(
         modifier = Modifier.clickable(role = Role.Button, onClick = onClick),
@@ -76,7 +76,7 @@ private fun CardRowViewWithSubText(
                 Text(
                     text = " • $it",
                     modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = bottomDp),
-                    style = textStyleSubhead(),
+                    style = textStyleSubhead().onSurfaceVariant(),
                     overflow = TextOverflow.Ellipsis,
                     maxLines = 1,
                 )
