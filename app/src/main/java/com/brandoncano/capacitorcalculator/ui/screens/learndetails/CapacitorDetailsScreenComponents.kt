@@ -1,4 +1,4 @@
-package com.brandoncano.capacitorcalculator.ui.screens.informationdetails
+package com.brandoncano.capacitorcalculator.ui.screens.learndetails
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
@@ -14,7 +14,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
@@ -97,20 +96,25 @@ fun MicaCapacitorImage() {
 }
 
 @Composable
-fun HeaderBodyInformation(topPadding: Dp = 24.dp, @StringRes header: Int, @StringRes body: Int) {
+fun HeaderBodyInformation(
+    @StringRes header: Int,
+    @StringRes vararg bodyTexts: Int
+) {
     Column {
         Text(
             text = stringResource(id = header),
             modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp, top = topPadding)
+                .padding(top = 24.dp)
                 .align(Alignment.Start),
             style = textStyleHeadline(),
         )
-        Text(
-            text = stringResource(id = body),
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
-            style = textStyleBody().onSurfaceVariant(),
-        )
+        bodyTexts.forEach { body ->
+            Text(
+                text = stringResource(id = body),
+                modifier = Modifier.padding(top = 12.dp),
+                style = textStyleBody().onSurfaceVariant(),
+            )
+        }
     }
 }
 
@@ -120,7 +124,7 @@ fun BodyInformation(vararg bodyTexts: Int) {
         bodyTexts.forEach { body ->
             Text(
                 text = stringResource(id = body),
-                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
+                modifier = Modifier.padding(top = 12.dp),
                 style = textStyleBody().onSurfaceVariant(),
             )
         }

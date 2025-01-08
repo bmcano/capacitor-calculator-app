@@ -1,4 +1,4 @@
-package com.brandoncano.capacitorcalculator.ui.screens.information
+package com.brandoncano.capacitorcalculator.ui.screens.learn
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable

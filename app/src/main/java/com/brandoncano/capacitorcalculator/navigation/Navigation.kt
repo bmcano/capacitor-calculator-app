@@ -20,8 +20,6 @@ import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypes
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorValues
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
 import com.brandoncano.capacitorcalculator.ui.screens.capacitorlegacy.CapacitorCalculatorScreen
-import com.brandoncano.capacitorcalculator.ui.screens.information.CapacitorTypesScreen
-import com.brandoncano.capacitorcalculator.ui.screens.informationdetails.InformationDetailsScreen
 import com.brandoncano.sharedcomponents.data.Apps
 import com.brandoncano.sharedcomponents.navigation.SharedScreens
 import com.brandoncano.sharedcomponents.navigation.donateScreen
@@ -41,7 +39,7 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
         startDestination = Screen.Home.route
     ) {
         aboutScreen(navController)
-        capacitorCodeValuesScreen(navController)
+        capacitorCodeValuesScreen(navController) // TODO - finish implementing this screen
         homeScreen(navController, onOpenThemeDialog)
         learnCapacitorTypes(navController)
         learnCapacitorTypeDetails(navController)
@@ -52,10 +50,7 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
         donateScreen(navController)
         viewOurAppsScreen(navController, Apps.Capacitor)
 
-
-
-
-        // TODO migrate these screens
+        // TODO - migrate this screen
         composable(
             route = Screen.CapacitorCalculator.route,
             enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
@@ -65,10 +60,6 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
             val capacitor = viewModel.getCapacitorLiveData()
             CapacitorCalculatorScreen(context, navController, viewModel, capacitor)
         }
-
-
-
-
     }
 }
 
@@ -100,14 +91,14 @@ fun navigateToCapacitorValues(navController: NavHostController) {
     navController.navigate(Screen.CapacitorValues.route)
 }
 
+fun navigateToGooglePlay(context: Context) {
+    OpenLink.execute(context, Links.CAPACITOR_PLAYSTORE)
+}
+
 fun navigateToOurApps(navController: NavHostController) {
     navController.navigate(SharedScreens.ViewOurApps.route)
 }
 
 fun navigateToDonate(navController: NavHostController) {
     navController.navigate(SharedScreens.Donate.route)
-}
-
-fun navigateToGooglePlay(context: Context) {
-    OpenLink.execute(context, Links.CAPACITOR_PLAYSTORE)
 }

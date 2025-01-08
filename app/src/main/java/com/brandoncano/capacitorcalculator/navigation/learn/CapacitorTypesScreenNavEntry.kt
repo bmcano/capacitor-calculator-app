@@ -7,7 +7,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import com.brandoncano.capacitorcalculator.data.CapacitorType
 import com.brandoncano.capacitorcalculator.navigation.Screen
-import com.brandoncano.capacitorcalculator.ui.screens.information.CapacitorTypesScreen
+import com.brandoncano.capacitorcalculator.ui.screens.learn.CapacitorTypesScreen
 
 fun NavGraphBuilder.learnCapacitorTypes(
     navHostController: NavHostController,
