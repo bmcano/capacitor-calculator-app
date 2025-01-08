@@ -15,17 +15,17 @@ import androidx.navigation.compose.rememberNavController
 import com.brandoncano.capacitorcalculator.constants.Links
 import com.brandoncano.capacitorcalculator.model.CapacitorViewModelFactory
 import com.brandoncano.capacitorcalculator.model.capacitorlegacy.CapacitorCapacitorViewModel
-import com.brandoncano.capacitorcalculator.model.smd.SmdCapacitorViewModel
 import com.brandoncano.capacitorcalculator.navigation.calculators.capacitorCodeValuesScreen
+import com.brandoncano.capacitorcalculator.navigation.calculators.smdScreen
 import com.brandoncano.capacitorcalculator.ui.screens.capacitorlegacy.CapacitorCalculatorScreen
 import com.brandoncano.capacitorcalculator.ui.screens.capacitorvalues.CapacitorValuesScreen
 import com.brandoncano.capacitorcalculator.ui.screens.chart.ChartScreen
 import com.brandoncano.capacitorcalculator.ui.screens.information.InformationScreen
 import com.brandoncano.capacitorcalculator.ui.screens.informationdetails.InformationDetailsScreen
-import com.brandoncano.capacitorcalculator.ui.screens.smd.SmdCalculatorScreen
 import com.brandoncano.sharedcomponents.data.Apps
 import com.brandoncano.sharedcomponents.navigation.SharedScreens
-import com.brandoncano.sharedcomponents.screen.ViewOurAppsScreen
+import com.brandoncano.sharedcomponents.navigation.donateScreen
+import com.brandoncano.sharedcomponents.navigation.viewOurAppsScreen
 import com.brandoncano.sharedcomponents.utils.OpenLink
 
 /**
@@ -43,6 +43,11 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
         aboutScreen(navController)
         capacitorCodeValuesScreen(navController)
         homeScreen(navController, onOpenThemeDialog)
+        smdScreen(navController)
+        // from shared library
+        donateScreen(navController)
+        viewOurAppsScreen(navController, Apps.Capacitor)
+
         // TODO migrate these screens
         composable(
             route = Screen.CapacitorCalculator.route,
@@ -83,28 +88,6 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
             val arg1 = backStackEntry.arguments?.getString("arg1") ?: ""
             val informationDetails = InformationDetails.fromRoute(arg1)
             InformationDetailsScreen(informationDetails)
-        }
-        composable(
-            route = Screen.Smd.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            val viewModel = viewModel<SmdCapacitorViewModel>(factory = CapacitorViewModelFactory(context))
-            val navBarPosition = viewModel.getNavBarSelection()
-            val capacitor = viewModel.getCapacitorLiveData()
-            SmdCalculatorScreen(context, navController, viewModel, navBarPosition, capacitor)
-        }
-        // from shared library
-        composable(
-            route = Screen.ViewOurApps.route,
-            enterTransition = { slideInVertically(initialOffsetY = { it }) },
-            exitTransition = { slideOutVertically(targetOffsetY = { it }) },
-        ) {
-            ViewOurAppsScreen(
-                context = LocalContext.current,
-                app = Apps.Capacitor,
-                onNavigateBack = { navController.popBackStack() },
-            )
         }
     }
 }

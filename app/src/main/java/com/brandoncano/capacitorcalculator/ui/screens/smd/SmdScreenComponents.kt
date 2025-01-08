@@ -24,10 +24,7 @@ import com.brandoncano.sharedcomponents.text.textStyleLargeTitle
 import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 @Composable
-fun SmdCapacitorLayout(
-    capacitor: SmdCapacitor,
-    isError: Boolean = false,
-) {
+fun SmdCapacitorLayout(capacitor: SmdCapacitor, isError: Boolean) {
     Column(
         modifier = Modifier.padding(top = 24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -78,11 +75,11 @@ private fun SmdCapacitorLayoutPreview() {
     CapacitorCalculatorTheme {
         Column {
             val capacitor1 = SmdCapacitor(code = "1R4")
-            SmdCapacitorLayout(capacitor1)
+            SmdCapacitorLayout(capacitor1, false)
             val capacitor2 = SmdCapacitor(code = "1R4J", navBarSelection = 1)
-            SmdCapacitorLayout(capacitor2)
+            SmdCapacitorLayout(capacitor2, false)
             val capacitor3 = SmdCapacitor(code = "A0", navBarSelection = 2)
-            SmdCapacitorLayout(capacitor3)
+            SmdCapacitorLayout(capacitor3, false)
         }
     }
 }

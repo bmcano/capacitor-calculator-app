@@ -1,49 +1,67 @@
 package com.brandoncano.capacitorcalculator.model.smd
 
 import android.content.Context
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.brandoncano.capacitorcalculator.util.formatCapacitance
+import com.brandoncano.capacitorcalculator.util.isSmdInputInvalid
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class SmdCapacitorViewModel(context: Context): ViewModel() {
 
     private val repository = SmdCapacitorRepository.getInstance(context)
-    private val capacitor = MutableLiveData<SmdCapacitor>()
+
+    private val _capacitor = MutableStateFlow(SmdCapacitor())
+    val capacitor: StateFlow<SmdCapacitor> get() = _capacitor
+
+    private val _isError = MutableStateFlow(false)
+    val isError: StateFlow<Boolean> get() = _isError
 
     init {
-        capacitor.value = SmdCapacitor()
-    }
-
-    override fun onCleared() {
-        capacitor.value = null
+        viewModelScope.launch {
+            val loadedResistor = repository.loadCapacitor()
+            _capacitor.value = loadedResistor
+            updateErrorState()
+        }
     }
 
     fun clear() {
-        capacitor.value = SmdCapacitor(navBarSelection = getNavBarSelection())
+        _capacitor.value = SmdCapacitor(navBarSelection = getNavBarSelection())
+        _isError.value = false
         repository.clear()
     }
 
-    fun getCapacitorLiveData(): LiveData<SmdCapacitor> {
-        capacitor.value = repository.loadCapacitor()
-        return capacitor
-    }
-
     fun updateValues(code: String, units: String) {
-        capacitor.value = capacitor.value?.copy(code = code, units = units)
+        _capacitor.value = _capacitor.value.copy(code = code, units = units)
+        updateErrorState()
+        if (!_isError.value) {
+            _capacitor.value.formatCapacitance()
+            saveResistorValues()
+        }
     }
 
     fun getNavBarSelection(): Int {
-        val capacitor = repository.loadCapacitor()
-        return capacitor.navBarSelection
+        return _capacitor.value.navBarSelection
     }
 
     fun saveNavBarSelection(number: Int) {
         val navBarSelection = number.coerceIn(0..2)
-        capacitor.value = capacitor.value?.copy(navBarSelection = navBarSelection)
+        _capacitor.value = _capacitor.value.copy(navBarSelection = navBarSelection)
+        updateErrorState()
+        if (!_isError.value) {
+            _capacitor.value.formatCapacitance()
+            saveResistorValues()
+        }
         repository.saveNavBarSelection(navBarSelection)
     }
 
-    fun saveCapacitorValues(capacitor: SmdCapacitor) {
-        repository.saveCapacitor(capacitor)
+    private fun saveResistorValues() {
+        repository.saveCapacitor(_capacitor.value)
+    }
+
+    private fun updateErrorState() {
+        _isError.value = _capacitor.value.isSmdInputInvalid()
     }
 }
