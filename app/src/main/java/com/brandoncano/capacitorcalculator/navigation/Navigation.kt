@@ -15,9 +15,9 @@ import com.brandoncano.capacitorcalculator.model.CapacitorViewModelFactory
 import com.brandoncano.capacitorcalculator.model.capacitorlegacy.CapacitorCapacitorViewModel
 import com.brandoncano.capacitorcalculator.navigation.calculators.capacitorCodeValuesScreen
 import com.brandoncano.capacitorcalculator.navigation.calculators.smdScreen
+import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorValues
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
 import com.brandoncano.capacitorcalculator.ui.screens.capacitorlegacy.CapacitorCalculatorScreen
-import com.brandoncano.capacitorcalculator.ui.screens.capacitorvalues.CapacitorValuesScreen
 import com.brandoncano.capacitorcalculator.ui.screens.information.InformationScreen
 import com.brandoncano.capacitorcalculator.ui.screens.informationdetails.InformationDetailsScreen
 import com.brandoncano.sharedcomponents.data.Apps
@@ -40,20 +40,15 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
     ) {
         aboutScreen(navController)
         capacitorCodeValuesScreen(navController)
-        learnCommonCodes(navController)
         homeScreen(navController, onOpenThemeDialog)
+        learnCapacitorValues(navController)
+        learnCommonCodes(navController)
         smdScreen(navController)
         // from shared library
         donateScreen(navController)
         viewOurAppsScreen(navController, Apps.Capacitor)
 
-        composable(
-            route = Screen.CapacitorValues.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            CapacitorValuesScreen(context, navController)
-        }
+
 
 
 

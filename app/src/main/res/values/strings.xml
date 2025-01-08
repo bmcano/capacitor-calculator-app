@@ -26,7 +26,7 @@
     <!-- capacitor values screen -->
     <string name="capacitor_values_title">Capacitor Values</string>
     <string name="capacitor_values_capacitance_header">Capacitance</string>
-    <string name="capacitor_values_capacitance_body">Smaller capacitors use a shorthand notation, to display all the relevant information in the limited space. The most commonly used format is: XYZ T VOLTS V, where XYZ represents the capacitance (calculated as XY * 10^Z pF), the letters T indicate the tolerance (see table below) and VOLTS V represents the voltage rating (see table below).</string>
+    <string name="capacitor_values_capacitance_body">Smaller capacitors use a shorthand notation, to display all the relevant information in the limited space. The most commonly used format is: XYZ T VOLTS V, where XYZ represents the capacitance, calculated as XY * 10\u1dbb pF. The letters T indicate the tolerance (see table below) and VOLTS V represents the voltage rating (see table below).</string>
     <string name="capacitor_values_tolerance_header">Tolerance</string>
     <string name="capacitor_values_tolerance_letter">Letter</string>
     <string name="capacitor_values_tolerance_percentage">Tolerance (%)</string>

@@ -147,7 +147,7 @@ private fun CapacitorCodeValuesContent(
         AppDivider(modifier = Modifier.padding(vertical = 24.dp, horizontal = 16.dp))
         Column(horizontalAlignment = Alignment.Start) {
             Text(
-                text = "Learn more",
+                text = "Learn about common codes",
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
                 style = textStyleHeadline(),
             )
