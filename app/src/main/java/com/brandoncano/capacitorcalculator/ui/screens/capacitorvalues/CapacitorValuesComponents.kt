@@ -19,16 +19,16 @@ import com.brandoncano.capacitorcalculator.data.Tolerance
 import com.brandoncano.capacitorcalculator.data.VoltageRating
 import com.brandoncano.capacitorcalculator.navigation.Screen
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
-import com.brandoncano.capacitorcalculator.ui.theme.gray
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleBody
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleCallout
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleHeadline
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleSubhead
 import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
 import com.brandoncano.sharedcomponents.composables.AppCard
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
+import com.brandoncano.sharedcomponents.text.onSurfaceVariant
+import com.brandoncano.sharedcomponents.text.textStyleBody
+import com.brandoncano.sharedcomponents.text.textStyleCallout
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.text.textStyleSubhead
 
 @Composable
 fun CodeExplanation() {
@@ -41,7 +41,7 @@ fun CodeExplanation() {
         Text(
             text = stringResource(id = R.string.capacitor_values_capacitance_body),
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
-            style = textStyleSubhead().gray()
+            style = textStyleSubhead().onSurfaceVariant()
         )
     }
 }

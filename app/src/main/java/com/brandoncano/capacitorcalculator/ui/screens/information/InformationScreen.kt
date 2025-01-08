@@ -26,12 +26,12 @@ import com.brandoncano.capacitorcalculator.ui.MainActivity
 import com.brandoncano.capacitorcalculator.ui.composables.AboutAppMenuItem
 import com.brandoncano.capacitorcalculator.ui.composables.FeedbackMenuItem
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
-import com.brandoncano.capacitorcalculator.ui.theme.gray
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleBody
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleCaption
 import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
+import com.brandoncano.sharedcomponents.text.onSurfaceVariant
+import com.brandoncano.sharedcomponents.text.textStyleBody
+import com.brandoncano.sharedcomponents.text.textStyleCaption
 
 @Composable
 fun InformationScreen(context: Context, navController: NavController) {
@@ -61,7 +61,7 @@ private fun ContentView(context: Context, navController: NavController) {
         Text(
             text = stringResource(id = R.string.information_header_text),
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
-            style = textStyleBody().gray(),
+            style = textStyleBody().onSurfaceVariant(),
         )
         AppDivider(
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp),
@@ -125,7 +125,7 @@ private fun ContentView(context: Context, navController: NavController) {
         Text(
             text = stringResource(id = R.string.information_footer_text),
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 16.dp),
-            style = textStyleCaption().gray(),
+            style = textStyleCaption().onSurfaceVariant(),
         )
         Spacer(modifier = Modifier.height(24.dp))
     }

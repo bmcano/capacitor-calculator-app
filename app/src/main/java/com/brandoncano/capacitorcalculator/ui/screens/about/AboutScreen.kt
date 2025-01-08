@@ -1,6 +1,7 @@
 package com.brandoncano.capacitorcalculator.ui.screens.about
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -10,11 +11,12 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.outlined.Policy
-import androidx.compose.material3.Surface
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
@@ -22,8 +24,8 @@ import com.brandoncano.capacitorcalculator.ui.screens.home.CapacitorInformationB
 import com.brandoncano.capacitorcalculator.ui.screens.home.OurAppsButtons
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
 import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
+import com.brandoncano.sharedcomponents.composables.AppCard
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
-import com.brandoncano.sharedcomponents.composables.AppStandardCard
 import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
 import com.brandoncano.sharedcomponents.screen.AppInfoCard
@@ -40,47 +42,53 @@ fun AboutScreen(
     onCapacitorValuesTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
+    onDonateTapped: () -> Unit,
 ) {
-    Surface(modifier = Modifier.fillMaxSize()) {
+    Scaffold(
+        topBar = {
+            AppTopAppBar(
+                titleText = stringResource(R.string.about_title),
+                navigationIcon = Icons.Filled.Close,
+                onNavigateBack = onNavigateBack,
+            )
+        }
+    ) { paddingValues ->
         AboutScreenContent(
-            onNavigateBack = onNavigateBack,
+            paddingValues = paddingValues,
             onViewPrivacyPolicyTapped = onViewPrivacyPolicyTapped,
             onRateThisAppTapped = onRateThisAppTapped,
             onCapacitorTypesTapped = onCapacitorTypesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
             onViewOurAppsTapped = onViewOurAppsTapped,
+            onDonateTapped = onDonateTapped,
         )
     }
 }
 
 @Composable
 private fun AboutScreenContent(
-    onNavigateBack: () -> Unit,
+    paddingValues: PaddingValues,
     onViewPrivacyPolicyTapped: () -> Unit,
     onCapacitorTypesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
+    onDonateTapped: () -> Unit,
 ) {
+    val sidePadding = dimensionResource(R.dimen.app_side_padding)
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState()),
+            .verticalScroll(rememberScrollState())
+            .padding(paddingValues)
+            .padding(horizontal = sidePadding),
         horizontalAlignment = Alignment.Start,
     ) {
-        AppTopAppBar(
-            titleText = stringResource(R.string.about_title),
-            navigationIcon = Icons.Filled.Close,
-            onNavigateBack = onNavigateBack,
-        )
         Spacer(modifier = Modifier.height(12.dp))
-
         AuthorCard()
         Spacer(modifier = Modifier.height(16.dp))
-
         AppInfoCard(R.string.version, R.string.last_updated)
         Spacer(modifier = Modifier.height(16.dp))
-
         AppArrowCardButton(
             ArrowCardButtonContents(
                 imageVector = Icons.Outlined.Policy,
@@ -89,31 +97,29 @@ private fun AboutScreenContent(
             )
         )
         Spacer(modifier = Modifier.height(32.dp))
-
         Text(
             text = stringResource(id = R.string.about_description),
-            modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 12.dp),
+            modifier = Modifier.padding(bottom = 12.dp),
             style = textStyleHeadline(),
         )
-        AppStandardCard {
+        AppCard {
             Text(
                 text = stringResource(id = R.string.about_description_part_01),
-                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
+                modifier = Modifier.padding(16.dp),
                 style = textStyleBody().onSurfaceVariant(),
             )
             Text(
                 text = stringResource(id = R.string.about_description_part_02),
-                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
                 style = textStyleBody().onSurfaceVariant(),
             )
             Text(
                 text = stringResource(id = R.string.about_description_part_03),
-                modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
                 style = textStyleBody().onSurfaceVariant(),
             )
         }
         Spacer(modifier = Modifier.height(32.dp))
-
         CapacitorInformationButtons(
             onCapacitorTypesTapped = onCapacitorTypesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
@@ -122,6 +128,7 @@ private fun AboutScreenContent(
         OurAppsButtons(
             onRateThisAppTapped = onRateThisAppTapped,
             onViewOurAppsTapped = onViewOurAppsTapped,
+            onDonateTapped = onDonateTapped,
         )
         Spacer(modifier = Modifier.height(48.dp))
     }
@@ -138,6 +145,7 @@ private fun AboutPreview() {
             onCapacitorValuesTapped = {},
             onRateThisAppTapped = {},
             onViewOurAppsTapped = {},
+            onDonateTapped = {},
         )
     }
 }

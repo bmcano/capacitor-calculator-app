@@ -18,13 +18,13 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
-import com.brandoncano.capacitorcalculator.ui.theme.gray
 import com.brandoncano.capacitorcalculator.ui.theme.mica_capacitor
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleBody
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleHeadline
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleTitle
 import com.brandoncano.capacitorcalculator.ui.theme.white
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
+import com.brandoncano.sharedcomponents.text.onSurfaceVariant
+import com.brandoncano.sharedcomponents.text.textStyleBody
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 @Composable
 fun CeramicCapacitorImage() {
@@ -86,11 +86,11 @@ fun MicaCapacitorImage() {
         ) {
             Text(
                 text = "1000 ±5%",
-                style = textStyleTitle().gray()
+                style = textStyleTitle().onSurfaceVariant()
             )
             Text(
                 text = "500V SM",
-                style = textStyleTitle().gray()
+                style = textStyleTitle().onSurfaceVariant()
             )
         }
     }
@@ -109,7 +109,7 @@ fun HeaderBodyInformation(topPadding: Dp = 24.dp, @StringRes header: Int, @Strin
         Text(
             text = stringResource(id = body),
             modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
-            style = textStyleBody().gray(),
+            style = textStyleBody().onSurfaceVariant(),
         )
     }
 }
@@ -121,7 +121,7 @@ fun BodyInformation(vararg bodyTexts: Int) {
             Text(
                 text = stringResource(id = body),
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp),
-                style = textStyleBody().gray(),
+                style = textStyleBody().onSurfaceVariant(),
             )
         }
     }

@@ -3,7 +3,7 @@ package com.brandoncano.capacitorcalculator.ui.theme
 import androidx.compose.ui.graphics.Color
 
 // m3 light theme colors
-val primaryLight = Color(0xFF8F4C32)
+val primaryLight = Color(0xFF903000)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFFFFDBCE)
 val onPrimaryContainerLight = Color(0xFF380D00)
@@ -75,7 +75,8 @@ val surfaceContainerDark = Color(0xFF271E1A)
 val surfaceContainerHighDark = Color(0xFF322824)
 val surfaceContainerHighestDark = Color(0xFF3D322F)
 // other colors
-val white = Color(0xFFFFFFFF)
+val black = Color(0xFF00000F)
+val white = Color(0xFFF5F5F5)
 val gray_subtext_light = Color(0xFF6b7275)
 val gray_subtext_dark = Color(0xFFD8C2BB)
 val mica_capacitor = Color(0xFF511726)

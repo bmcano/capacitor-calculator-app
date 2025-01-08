@@ -24,6 +24,7 @@ import com.brandoncano.capacitorcalculator.ui.screens.information.InformationScr
 import com.brandoncano.capacitorcalculator.ui.screens.informationdetails.InformationDetailsScreen
 import com.brandoncano.capacitorcalculator.ui.screens.smd.SmdCalculatorScreen
 import com.brandoncano.sharedcomponents.data.Apps
+import com.brandoncano.sharedcomponents.navigation.SharedScreens
 import com.brandoncano.sharedcomponents.screen.ViewOurAppsScreen
 import com.brandoncano.sharedcomponents.utils.OpenLink
 
@@ -113,7 +114,7 @@ fun navigateToAbout(navController: NavHostController) {
 }
 
 fun navigateToCapacitorCode(navController: NavHostController) {
-    navController.navigate(Screen.CapacitorCalculator.route) {
+    navController.navigate(Screen.CapacitorCodeValues.route) {
         popUpTo(Screen.Home.route)
     }
 }
@@ -136,9 +137,12 @@ fun navigateToCapacitorValues(navController: NavHostController) {
     navController.navigate(Screen.CapacitorValues.route)
 }
 
-
 fun navigateToOurApps(navController: NavHostController) {
     navController.navigate(Screen.ViewOurApps.route)
+}
+
+fun navigateToDonate(navController: NavHostController) {
+    navController.navigate(SharedScreens.Donate.route)
 }
 
 fun navigateToGooglePlay(context: Context) {

@@ -50,6 +50,7 @@
     <string name="home_our_apps_header_text">Our apps</string>
     <string name="home_button_rate_us">Rate this app</string>
     <string name="home_button_view_apps">Check out our other apps</string>
+    <string name="home_button_donate">Donate</string>
     <!-- information screen -->
     <string name="information_title">Capacitor Types</string>
     <string name="information_header_text">Click on any capacitor type below to learn more about its characteristics, applications, and advantages.</string>

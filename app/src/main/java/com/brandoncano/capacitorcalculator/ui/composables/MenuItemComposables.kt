@@ -1,9 +1,6 @@
 package com.brandoncano.capacitorcalculator.ui.composables
 
 import android.content.Context
-import androidx.annotation.Dimension
-import androidx.annotation.StringRes
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Cancel
@@ -12,25 +9,19 @@ import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.Palette
 import androidx.compose.material.icons.outlined.Share
 import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.navigation.Screen
-import com.brandoncano.capacitorcalculator.ui.MainActivity
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
-import com.brandoncano.capacitorcalculator.ui.theme.iconGray
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleBody
 import com.brandoncano.capacitorcalculator.util.EmailFeedback
 import com.brandoncano.capacitorcalculator.util.ShareCapacitance
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
+import com.brandoncano.sharedcomponents.composables.MenuIcon
+import com.brandoncano.sharedcomponents.composables.MenuText
 
 /**
  * Note: Menu items are in alphabetical order
@@ -39,9 +30,9 @@ import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 @Composable
 fun AboutAppMenuItem(onAboutTapped: () -> Unit) {
     DropdownMenuItem(
-        text = { com.brandoncano.sharedcomponents.composables.MenuText(stringRes = R.string.menu_about) },
+        text = { MenuText(stringRes = R.string.menu_about) },
         onClick = onAboutTapped,
-        leadingIcon = { com.brandoncano.sharedcomponents.composables.MenuIcon(Icons.Outlined.Info) },
+        leadingIcon = { MenuIcon(Icons.Outlined.Info) },
     )
 }
 
@@ -51,12 +42,12 @@ fun AppThemeMenuItem(
     onThemeSelected: () -> Unit,
 ) {
     DropdownMenuItem(
-        text = { com.brandoncano.sharedcomponents.composables.MenuText(stringRes = R.string.menu_app_theme) },
+        text = { MenuText(stringRes = R.string.menu_app_theme) },
         onClick = {
             openMenu.value = false
             onThemeSelected()
         },
-        leadingIcon = { com.brandoncano.sharedcomponents.composables.MenuIcon(Icons.Outlined.Palette) },
+        leadingIcon = { MenuIcon(Icons.Outlined.Palette) },
     )
 }
 
@@ -106,34 +97,14 @@ fun ShareMenuItem(text: String, context: Context, showMenu: MutableState<Boolean
     )
 }
 
-@Composable
-private fun MenuText(@StringRes stringRes: Int) {
-    Text(
-        text = stringResource(id = stringRes),
-        style = textStyleBody().iconGray(),
-    )
-}
-
-@Composable
-private fun MenuIcon(imageVector: ImageVector) {
-    Image(
-        imageVector = imageVector,
-        contentDescription = null,
-        colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurfaceVariant)
-    )
-}
-
 @AppComponentPreviews
 @Composable
 private fun MenuItemsPreview() {
     val showMenu = remember { mutableStateOf(false) }
-    val app = MainActivity()
     CapacitorCalculatorTheme {
         Column {
-            AboutAppMenuItem(NavController(app), showMenu)
-            ClearSelectionsMenuItem { }
-            FeedbackMenuItem(app, showMenu)
-            ShareMenuItem("text", app, showMenu)
+            AboutAppMenuItem {}
+            AppThemeMenuItem(showMenu) {}
         }
     }
 }

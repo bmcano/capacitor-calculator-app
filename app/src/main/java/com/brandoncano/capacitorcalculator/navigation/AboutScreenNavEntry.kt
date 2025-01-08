@@ -27,6 +27,7 @@ fun NavGraphBuilder.aboutScreen(
             onCapacitorValuesTapped = { navigateToCapacitorValues(navHostController) },
             onRateThisAppTapped = { navigateToGooglePlay(context) },
             onViewOurAppsTapped = { navigateToOurApps(navHostController) },
+            onDonateTapped = { navigateToDonate(navHostController) },
         )
     }
 }

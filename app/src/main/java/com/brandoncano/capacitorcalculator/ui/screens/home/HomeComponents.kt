@@ -9,12 +9,14 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Apps
+import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Grade
 import androidx.compose.material.icons.outlined.Info
 import androidx.compose.material.icons.outlined.TableView
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -28,6 +30,7 @@ import com.brandoncano.capacitorcalculator.ui.theme.LocalIsDarkTheme
 import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
 
 @Composable
 fun AppIcon() {
@@ -62,10 +65,8 @@ fun CapacitorInformationButtons(
     Column {
         Text(
             text = stringResource(id = R.string.home_capacitors_header_text),
-            modifier = Modifier
-                .padding(start = 16.dp, end = 16.dp)
-                .align(Alignment.Start),
-            style = com.brandoncano.capacitorcalculator.ui.theme.textStyleHeadline(),
+            modifier = Modifier.align(Alignment.Start),
+            style = textStyleHeadline(),
         )
         Spacer(modifier = Modifier.height(12.dp))
         AppArrowCardButton(
@@ -87,14 +88,13 @@ fun CapacitorInformationButtons(
 fun OurAppsButtons(
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
+    onDonateTapped: () -> Unit,
 ) {
     Column {
         Text(
             text = stringResource(id = R.string.home_our_apps_header_text),
-            modifier = Modifier
-                .padding(horizontal = 16.dp)
-                .align(Alignment.Start),
-            style = com.brandoncano.sharedcomponents.text.textStyleHeadline(),
+            modifier = Modifier.align(Alignment.Start),
+            style = textStyleHeadline(),
         )
         Spacer(modifier = Modifier.height(12.dp))
         AppArrowCardButton(
@@ -108,6 +108,11 @@ fun OurAppsButtons(
                 text = stringResource(id = R.string.home_button_view_apps),
                 onClick = onViewOurAppsTapped,
             ),
+            ArrowCardButtonContents(
+                imageVector = Icons.Outlined.FavoriteBorder,
+                text = stringResource(R.string.home_button_donate),
+                onClick = onDonateTapped,
+            ),
         )
     }
 }
@@ -116,9 +121,12 @@ fun OurAppsButtons(
 @Composable
 private fun ButtonsPreview() {
     CapacitorCalculatorTheme {
-        Column {
-            CapacitorInformationButtons({}, {})
-            OurAppsButtons({}, {})
+        Surface {
+            OurAppsButtons(
+                onRateThisAppTapped = {},
+                onViewOurAppsTapped = {},
+                onDonateTapped = {},
+            )
         }
     }
 }

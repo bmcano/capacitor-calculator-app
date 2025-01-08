@@ -15,11 +15,11 @@ import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.data.CapacitorCodeConversions
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleBody
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleHeadline
 import com.brandoncano.sharedcomponents.composables.AppCard
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 import com.brandoncano.sharedcomponents.composables.AppDivider
+import com.brandoncano.sharedcomponents.text.textStyleBody
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
 
 @Composable
 fun ChartRowLabels() {

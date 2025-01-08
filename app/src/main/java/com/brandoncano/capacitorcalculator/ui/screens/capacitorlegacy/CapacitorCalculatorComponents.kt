@@ -18,16 +18,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.model.capacitorlegacy.CapacitorLegacy
-import com.brandoncano.capacitorcalculator.ui.theme.iconGray
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleHeadline
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleSubhead
-import com.brandoncano.capacitorcalculator.ui.theme.textStyleTitle
 import com.brandoncano.capacitorcalculator.util.formatCapacitance
 import com.brandoncano.capacitorcalculator.util.formatCode
 import com.brandoncano.capacitorcalculator.util.getTolerancePercentage
 import com.brandoncano.capacitorcalculator.util.getVoltageRating
 import com.brandoncano.sharedcomponents.composables.AppCard
-import com.brandoncano.sharedcomponents.composables.AppStandardCard
+import com.brandoncano.sharedcomponents.text.onSurfaceVariant
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.text.textStyleSubhead
+import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 @Composable
 fun TabText(@StringRes title: Int) {
@@ -101,10 +100,10 @@ fun CapacitorInformation() {
             Text(
                 text = stringResource(id = R.string.capacitor_calculator_information_header),
                 modifier = Modifier.padding(start = 8.dp, end = 16.dp, top = 24.dp),
-                style = textStyleHeadline().iconGray(),
+                style = textStyleHeadline().onSurfaceVariant(),
             )
         }
-        AppStandardCard {
+        AppCard {
             Text(
                 text = stringResource(id = R.string.capacitor_calculator_information_body_1),
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, top = 12.dp, bottom = 12.dp),
