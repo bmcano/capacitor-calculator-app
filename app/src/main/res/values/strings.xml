@@ -7,7 +7,7 @@
     <string name="about_description_part_02">Additionally, you can calculate the capacitance of a SMD capacitor by any of the three available standards.</string>
     <string name="about_description_part_03">We also include a information page with details, characteristics, and applications of various types of capacitors.</string>
     <string name="about_view_privacy_policy">View privacy policy</string>
-    <!-- capacitor calculator screen -->
+    <!-- capacitor calculator screens -->
     <string name="capacitor_calculator_title">Capacitor Calculator</string>
     <string name="capacitor_calculator_tab_1">Code to Capacitance</string>
     <string name="capacitor_calculator_tab_2">Capacitance to Code</string>
@@ -18,6 +18,8 @@
     <string name="capacitor_calculator_voltage_rating">Voltage rating</string>
     <string name="capacitor_calculator_information_header">Capacitor information</string>
     <string name="capacitor_calculator_information_body_1">Capacitors come in many shapes and sizes, each with slight variations on which markings they have. For the most part if the capacitance is not directly marked, a three digit code determines the capacitance.</string>
+    <string name="capacitor_calculator_headline_text">Learn about common codes</string>
+    <string name="capacitor_calculator_button_text">Explore common codes</string>
     <!-- capacitor values screen -->
     <string name="capacitor_values_title">Capacitor Values</string>
     <string name="capacitor_values_capacitance_header">Capacitance</string>
@@ -35,10 +37,10 @@
     <string name="common_codes_nf">nF</string>
     <string name="common_codes_uf">µF</string>
     <!-- home screen -->
-    <string name="home_title">Capacitor Calculator</string>
     <string name="home_calculators_header_text">Calculators</string>
     <string name="home_capacitors_header_text">Learn about capacitors</string>
-    <string name="home_capacitor_calculator_button">Capacitor code calculator</string>
+    <string name="home_capacitor_code_calculator_button">Code-to-values calculator</string>
+    <string name="home_advanced_capacitor_code_button">Advanced capacitor code</string>
     <string name="home_smd_calculator_button">SMD capacitor</string>
     <string name="home_common_codes">Common codes</string>
     <string name="home_capacitor_values">Capacitor values</string>
@@ -157,6 +159,9 @@
     <!-- OutlinedTextField hints -->
     <string name="units_hint">Units</string>
     <string name="hint_code">Code</string>
+    <string name="hint_uf">Micro-farads (µF)</string>
+    <string name="hint_nf">Nano-farads (nF)</string>
+    <string name="hint_pf">Pico-farads (pF)</string>
     <!-- menu items -->
     <string name="menu_share">Share</string>
     <string name="menu_feedback">Feedback</string>

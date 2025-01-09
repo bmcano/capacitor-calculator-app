@@ -19,7 +19,7 @@ import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypeDe
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypes
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorValues
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
-import com.brandoncano.capacitorcalculator.ui.screens.capacitorlegacy.CapacitorCalculatorScreen
+import com.brandoncano.capacitorcalculator.ui.screens.capacitoradvanced.CapacitorCalculatorScreen
 import com.brandoncano.sharedcomponents.data.Apps
 import com.brandoncano.sharedcomponents.navigation.SharedScreens
 import com.brandoncano.sharedcomponents.navigation.donateScreen
@@ -39,7 +39,7 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
         startDestination = Screen.Home.route
     ) {
         aboutScreen(navController)
-        capacitorCodeValuesScreen(navController) // TODO - finish implementing this screen
+        capacitorCodeValuesScreen(navController)
         homeScreen(navController, onOpenThemeDialog)
         learnCapacitorTypes(navController)
         learnCapacitorTypeDetails(navController)
@@ -52,7 +52,7 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
 
         // TODO - migrate this screen
         composable(
-            route = Screen.CapacitorCalculator.route,
+            route = Screen.CapacitorAdvancedCalculator.route,
             enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
             exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
         ) {
@@ -69,6 +69,12 @@ fun navigateToAbout(navController: NavHostController) {
 
 fun navigateToCapacitorCode(navController: NavHostController) {
     navController.navigate(Screen.CapacitorCodeValues.route) {
+        popUpTo(Screen.Home.route)
+    }
+}
+
+fun navigateToAdvancedCapacitorCode(navController: NavHostController) {
+    navController.navigate(Screen.CapacitorAdvancedCalculator.route) {
         popUpTo(Screen.Home.route)
     }
 }

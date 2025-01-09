@@ -10,8 +10,8 @@ import kotlinx.serialization.Serializable
 @Serializable // needed for type-sage navigation
 sealed class Screen(val route: String) {
     data object About : Screen("about_screen")
-    data object CapacitorCodeValues : Screen("capacitor_code_values")
-    data object CapacitorCalculator : Screen("capacitor_calculator_screen")
+    data object CapacitorAdvancedCalculator : Screen("capacitor_advanced_screen")
+    data object CapacitorCodeValues : Screen("capacitor_code_values_screen")
     data object CapacitorTypes : Screen("capacitor_types_screen")
 
     @Serializable

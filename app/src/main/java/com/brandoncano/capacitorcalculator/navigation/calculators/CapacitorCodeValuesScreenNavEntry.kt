@@ -33,11 +33,13 @@ fun NavGraphBuilder.capacitorCodeValuesScreen(
         val reset = remember { mutableStateOf(false) }
         val viewModel: CapacitorViewModel = viewModel(factory = CapacitorViewModelFactory(context))
         val capacitor by viewModel.capacitor.collectAsState()
-        val isError by viewModel.isError.collectAsState()
+        val isCodeError by viewModel.isCodeError.collectAsState()
+        val isCapacitanceError by viewModel.isCapacitanceError.collectAsState()
 
         CapacitorCodeValuesScreen(
             capacitor = capacitor,
-            isError = isError,
+            isCodeError = isCodeError,
+            isCapacitanceError = isCapacitanceError,
             openMenu = openMenu,
             reset = reset,
             onNavigateBack = { navHostController.popBackStack() },

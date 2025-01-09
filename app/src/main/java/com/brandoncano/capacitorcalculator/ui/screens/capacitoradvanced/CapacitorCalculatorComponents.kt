@@ -1,4 +1,4 @@
-package com.brandoncano.capacitorcalculator.ui.screens.capacitorlegacy
+package com.brandoncano.capacitorcalculator.ui.screens.capacitoradvanced
 
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image

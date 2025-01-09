@@ -1,4 +1,4 @@
-package com.brandoncano.capacitorcalculator.ui.screens.capacitorlegacy
+package com.brandoncano.capacitorcalculator.ui.screens.capacitoradvanced
 
 import android.content.Context
 import androidx.compose.foundation.interaction.MutableInteractionSource

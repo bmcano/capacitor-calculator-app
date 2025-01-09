@@ -29,6 +29,7 @@ fun NavGraphBuilder.homeScreen(
                 navigateToAbout(navHostController)
             },
             onCapacitorCodeTapped = { navigateToCapacitorCode(navHostController) },
+            onAdvancedCodeTapped = { navigateToAdvancedCapacitorCode(navHostController) },
             onSmdTapped = { navigateToSmd(navHostController) },
             onCommonCodesTapped = { navigateToCommonCodes(navHostController) },
             onCapacitorValuesTapped = { navigateToCapacitorValues(navHostController) },

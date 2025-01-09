@@ -12,6 +12,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Code
 import androidx.compose.material.icons.outlined.Memory
+import androidx.compose.material.icons.outlined.Tune
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -41,6 +42,7 @@ fun HomeScreen(
     onOpenThemeDialog: () -> Unit,
     onAboutTapped: () -> Unit,
     onCapacitorCodeTapped: () -> Unit,
+    onAdvancedCodeTapped: () -> Unit,
     onSmdTapped: () -> Unit,
     onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
@@ -66,6 +68,7 @@ fun HomeScreen(
         HomeScreenContent(
             paddingValues = paddingValues,
             onCapacitorCodeTapped = onCapacitorCodeTapped,
+            onAdvancedCodeTapped = onAdvancedCodeTapped,
             onSmdTapped = onSmdTapped,
             onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
@@ -81,6 +84,7 @@ fun HomeScreen(
 private fun HomeScreenContent(
     paddingValues: PaddingValues,
     onCapacitorCodeTapped: () -> Unit,
+    onAdvancedCodeTapped: () -> Unit,
     onSmdTapped: () -> Unit,
     onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
@@ -107,12 +111,16 @@ private fun HomeScreenContent(
                 .align(Alignment.Start),
             style = textStyleHeadline(),
         )
-        // TODO - fix this later
         AppArrowCardButton(
             ArrowCardButtonContents(
                 imageVector = Icons.Outlined.Code,
-                text = stringResource(id = R.string.home_capacitor_calculator_button),
+                text = stringResource(id = R.string.home_capacitor_code_calculator_button),
                 onClick = onCapacitorCodeTapped
+            ),
+            ArrowCardButtonContents(
+                imageVector = Icons.Outlined.Tune,
+                text = stringResource(id = R.string.home_advanced_capacitor_code_button),
+                onClick = onAdvancedCodeTapped
             ),
             ArrowCardButtonContents(
                 imageVector = Icons.Outlined.Memory,
@@ -145,6 +153,7 @@ private fun HomePreview() {
             onOpenThemeDialog = {},
             onAboutTapped = {},
             onCapacitorCodeTapped = {},
+            onAdvancedCodeTapped = {},
             onSmdTapped = {},
             onCommonCodesTapped = {},
             onCapacitorValuesTapped = {},
