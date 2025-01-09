@@ -102,8 +102,7 @@ private fun HomeScreenContent(
             .padding(horizontal = sidePadding),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        AppIcon()
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(4.dp))
         Text(
             text = stringResource(id = R.string.home_calculators_header_text),
             modifier = Modifier
