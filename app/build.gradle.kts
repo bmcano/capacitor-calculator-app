@@ -13,8 +13,8 @@ android {
         applicationId = "com.brandoncano.capacitorcalculator"
         minSdk = 24
         targetSdk = 35
-        versionCode = 8 // for 2.1.0-RC1
-        versionName = "2.1.0-RC1"
+        versionCode = 9 // for 2.1.0
+        versionName = "2.1.0"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -22,7 +22,7 @@ android {
     }
     applicationVariants.configureEach {
         resValue("string", "version", versionName)
-        resValue("string", "last_updated", "1/8/2025")
+        resValue("string", "last_updated", "1/9/2025")
     }
     buildTypes {
         release {
