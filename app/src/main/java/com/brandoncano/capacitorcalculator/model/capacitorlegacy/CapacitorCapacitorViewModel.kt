@@ -14,10 +14,6 @@ class CapacitorCapacitorViewModel(context: Context) : ViewModel() {
         capacitorLegacy.value = CapacitorLegacy()
     }
 
-    override fun onCleared() {
-        capacitorLegacy.value = null
-    }
-
     fun clear() {
         capacitorLegacy.value = CapacitorLegacy()
         repository.clear()

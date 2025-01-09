@@ -42,8 +42,9 @@ fun HomeScreen(
     onAboutTapped: () -> Unit,
     onCapacitorCodeTapped: () -> Unit,
     onSmdTapped: () -> Unit,
-    onCapacitorTypesTapped: () -> Unit,
+    onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
+    onCapacitorTypesTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
     onDonateTapped: () -> Unit,
@@ -66,8 +67,9 @@ fun HomeScreen(
             paddingValues = paddingValues,
             onCapacitorCodeTapped = onCapacitorCodeTapped,
             onSmdTapped = onSmdTapped,
-            onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
+            onCapacitorTypesTapped = onCapacitorTypesTapped,
             onRateThisAppTapped = onRateThisAppTapped,
             onViewOurAppsTapped = onViewOurAppsTapped,
             onDonateTapped = onDonateTapped
@@ -80,8 +82,9 @@ private fun HomeScreenContent(
     paddingValues: PaddingValues,
     onCapacitorCodeTapped: () -> Unit,
     onSmdTapped: () -> Unit,
-    onCapacitorTypesTapped: () -> Unit,
+    onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
+    onCapacitorTypesTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
     onDonateTapped: () -> Unit,
@@ -119,8 +122,9 @@ private fun HomeScreenContent(
         )
         Spacer(modifier = Modifier.height(32.dp))
         CapacitorInformationButtons(
-            onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
+            onCapacitorTypesTapped = onCapacitorTypesTapped,
         )
         Spacer(modifier = Modifier.height(32.dp))
         OurAppsButtons(
@@ -142,8 +146,9 @@ private fun HomePreview() {
             onAboutTapped = {},
             onCapacitorCodeTapped = {},
             onSmdTapped = {},
-            onCapacitorTypesTapped = {},
+            onCommonCodesTapped = {},
             onCapacitorValuesTapped = {},
+            onCapacitorTypesTapped = {},
             onRateThisAppTapped = {},
             onViewOurAppsTapped = {},
             onDonateTapped = {},

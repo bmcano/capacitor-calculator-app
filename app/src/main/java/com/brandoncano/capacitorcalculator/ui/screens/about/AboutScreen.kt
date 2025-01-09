@@ -38,8 +38,9 @@ import com.brandoncano.sharedcomponents.text.textStyleHeadline
 fun AboutScreen(
     onNavigateBack: () -> Unit,
     onViewPrivacyPolicyTapped: () -> Unit,
-    onCapacitorTypesTapped: () -> Unit,
+    onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
+    onCapacitorTypesTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
     onDonateTapped: () -> Unit,
@@ -57,8 +58,9 @@ fun AboutScreen(
             paddingValues = paddingValues,
             onViewPrivacyPolicyTapped = onViewPrivacyPolicyTapped,
             onRateThisAppTapped = onRateThisAppTapped,
-            onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
+            onCapacitorTypesTapped = onCapacitorTypesTapped,
             onViewOurAppsTapped = onViewOurAppsTapped,
             onDonateTapped = onDonateTapped,
         )
@@ -69,8 +71,9 @@ fun AboutScreen(
 private fun AboutScreenContent(
     paddingValues: PaddingValues,
     onViewPrivacyPolicyTapped: () -> Unit,
-    onCapacitorTypesTapped: () -> Unit,
+    onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
+    onCapacitorTypesTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
     onDonateTapped: () -> Unit,
@@ -121,8 +124,9 @@ private fun AboutScreenContent(
         }
         Spacer(modifier = Modifier.height(32.dp))
         CapacitorInformationButtons(
-            onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
+            onCapacitorTypesTapped = onCapacitorTypesTapped,
         )
         Spacer(modifier = Modifier.height(32.dp))
         OurAppsButtons(
@@ -141,8 +145,9 @@ private fun AboutPreview() {
         AboutScreen(
             onNavigateBack = {},
             onViewPrivacyPolicyTapped = {},
-            onCapacitorTypesTapped = {},
+            onCommonCodesTapped = {},
             onCapacitorValuesTapped = {},
+            onCapacitorTypesTapped = {},
             onRateThisAppTapped = {},
             onViewOurAppsTapped = {},
             onDonateTapped = {},

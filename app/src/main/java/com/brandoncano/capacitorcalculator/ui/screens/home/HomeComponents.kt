@@ -8,11 +8,12 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.outlined.ViewList
 import androidx.compose.material.icons.outlined.Apps
+import androidx.compose.material.icons.outlined.Calculate
+import androidx.compose.material.icons.outlined.Category
 import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material.icons.outlined.Grade
-import androidx.compose.material.icons.outlined.Info
-import androidx.compose.material.icons.outlined.TableView
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
@@ -59,8 +60,9 @@ fun AppIcon() {
 
 @Composable
 fun CapacitorInformationButtons(
-    onCapacitorTypesTapped: () -> Unit,
+    onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
+    onCapacitorTypesTapped: () -> Unit,
 ) {
     Column {
         Text(
@@ -71,14 +73,19 @@ fun CapacitorInformationButtons(
         Spacer(modifier = Modifier.height(12.dp))
         AppArrowCardButton(
             ArrowCardButtonContents(
-                imageVector = Icons.Outlined.Info,
-                text = stringResource(id = R.string.home_information_button),
-                onClick = onCapacitorTypesTapped
+                imageVector = Icons.AutoMirrored.Outlined.ViewList,
+                text = stringResource(id = R.string.home_common_codes),
+                onClick = onCommonCodesTapped,
             ),
             ArrowCardButtonContents(
-                imageVector = Icons.Outlined.TableView,
+                imageVector = Icons.Outlined.Calculate,
                 text = stringResource(id = R.string.home_capacitor_values),
                 onClick = onCapacitorValuesTapped
+            ),
+            ArrowCardButtonContents(
+                imageVector = Icons.Outlined.Category,
+                text = stringResource(id = R.string.home_information_button),
+                onClick = onCapacitorTypesTapped
             )
         )
     }

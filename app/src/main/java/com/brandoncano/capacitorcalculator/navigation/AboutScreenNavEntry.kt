@@ -23,8 +23,9 @@ fun NavGraphBuilder.aboutScreen(
         AboutScreen(
             onNavigateBack = { navHostController.popBackStack() },
             onViewPrivacyPolicyTapped = { navigateToPrivacyPolicy(context) },
-            onCapacitorTypesTapped = { navigateToCapacitorTypes(navHostController) },
+            onCommonCodesTapped = { navigateToCommonCodes(navHostController) },
             onCapacitorValuesTapped = { navigateToCapacitorValues(navHostController) },
+            onCapacitorTypesTapped = { navigateToCapacitorTypes(navHostController) },
             onRateThisAppTapped = { navigateToGooglePlay(context) },
             onViewOurAppsTapped = { navigateToOurApps(navHostController) },
             onDonateTapped = { navigateToDonate(navHostController) },

@@ -137,7 +137,7 @@ private fun SmdScreenContent(
     ) {
         SmdCapacitorLayout(capacitor, isError)
         AppTextField(
-            label = stringResource(id = R.string.hint_smd_code),
+            label = stringResource(id = R.string.hint_code),
             modifier = Modifier.padding(top = 32.dp),
             value = code,
             reset = reset.value,

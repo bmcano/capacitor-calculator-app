@@ -118,19 +118,6 @@ fun HeaderBodyInformation(
     }
 }
 
-@Composable
-fun BodyInformation(vararg bodyTexts: Int) {
-    Column {
-        bodyTexts.forEach { body ->
-            Text(
-                text = stringResource(id = body),
-                modifier = Modifier.padding(top = 12.dp),
-                style = textStyleBody().onSurfaceVariant(),
-            )
-        }
-    }
-}
-
 @AppComponentPreviews
 @Composable
 private fun ElectrolyticCapacitorImagePreview() {
