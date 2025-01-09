@@ -136,12 +136,12 @@
 
     <string name="polymer_title">Polymer Capacitor</string>
     <string name="polymer_details_general_information_1">A polymer capacitor (or polymer electrolytic capacitor) uses a solid conductive polymer as the electrolyte. It is considered a type of electrolytic capacitor but with distinct advantages due to the polymer material.</string>
-    <string name="polymer_details_general_information_2">These capacitors feature notably low equivalent series resistance (ESR) and high ripple current ratings. However, polymer electrolytics often have a higher leakage current compared to other solid or non-solid electrolytic types.</string>
+    <string name="polymer_details_general_information_2">These capacitors feature notably low equivalent series resistance (ESR) and high ripple current ratings. However, polymer electrolytic capacitors often have a higher leakage current compared to other solid or non-solid electrolytic types.</string>
     <string name="polymer_details_capacitance">Polymer capacitors may have their capacitance stamped directly on the case or indicated through a three-digit code, similar to other capacitor types.</string>
     <string name="polymer_details_characteristics_1">Polymer tantalum electrolytic capacitors can achieve ESR values around 1/10th that of standard tantalum capacitors with manganese dioxide electrolytes. By using a multi-anode design—connecting multiple anode blocks in parallel within a single package—ESR and inductance (ESL) are further reduced, enabling better high-frequency performance.</string>
     <string name="polymer_details_characteristics_2">Rectangular polymer aluminum chip capacitors employ layered anode foils connected in parallel, lowering ESR and ESL while supporting higher operating frequencies. This design provides a strong alternative to traditional tantalum capacitors.</string>
-    <string name="polymer_details_characteristics_3">Hybrid polymer aluminum electrolytics offer substantially lower leakage current than standard polymer aluminum capacitors, making them suitable for applications requiring tighter leakage specifications.</string>
-    <string name="polymer_details_applications">Polymer electrolytics are commonly used in power supplies for buffering, bypassing, and decoupling—especially in slim or compact devices. They compete with some ceramic capacitors but provide greater capacitance and avoid microphonic effects.</string>
+    <string name="polymer_details_characteristics_3">Hybrid polymer aluminum electrolytic capacitors offer substantially lower leakage current than standard polymer aluminum capacitors, making them suitable for applications requiring tighter leakage specifications.</string>
+    <string name="polymer_details_applications">Polymer electrolytic capacitors are commonly used in power supplies for buffering, bypassing, and decoupling—especially in slim or compact devices. They compete with some ceramic capacitors but provide greater capacitance and avoid microphonic effects.</string>
 
     <string name="variable_title">Variable Capacitor</string>
     <string name="variable_details_general_information">A variable capacitor allows intentional, repeated changes to its capacitance, either mechanically or electronically. This is typically done by adjusting the plate overlap area or the distance between the plates.</string>
@@ -170,7 +170,6 @@
     <string name="navbar_eia_198">EIA-198</string>
     <!-- content descriptions -->
     <string name="content_right_arrow">Right arrow</string>
-    <string name="content_description_app_icon">App icon</string>
     <string name="content_description_ceramic_capacitor">Ceramic capacitor</string>
     <string name="content_description_smd_capacitor">SMD capacitor</string>
     <string name="content_description_electrolytic_capacitor">Electrolytic capacitor</string>
