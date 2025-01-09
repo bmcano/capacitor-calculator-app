@@ -2,18 +2,19 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin)
     alias(libs.plugins.jetbrains.kotlin.compose)
+    alias(libs.plugins.jetbrains.kotlin.serialization)
 }
 
 android {
     namespace = "com.brandoncano.capacitorcalculator"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.brandoncano.capacitorcalculator"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 7
-        versionName = "2.0.0"
+        targetSdk = 35
+        versionCode = 8 // for 2.1.0-RC1
+        versionName = "2.1.0-RC1"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -21,7 +22,7 @@ android {
     }
     applicationVariants.configureEach {
         resValue("string", "version", versionName)
-        resValue("string", "last_updated", "8/6/2024")
+        resValue("string", "last_updated", "1/8/2025")
     }
     buildTypes {
         release {
@@ -75,4 +76,7 @@ dependencies {
     testImplementation(libs.junit)
     // external libraries
     implementation(libs.ostermiller.util) // Job: can count number of sig figs in a string and round
+    implementation(libs.bmcano.util)
+    // jetbrains
+    implementation(libs.kotlinx.serialization.json)
 }

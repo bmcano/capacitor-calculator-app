@@ -1,55 +1,156 @@
 package com.brandoncano.capacitorcalculator.ui.screens.about
 
-import android.content.Context
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Surface
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.outlined.Policy
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
-import com.brandoncano.capacitorcalculator.ui.MainActivity
+import com.brandoncano.capacitorcalculator.ui.screens.home.CapacitorInformationButtons
 import com.brandoncano.capacitorcalculator.ui.screens.home.OurAppsButtons
-import com.brandoncano.capacitorcalculator.ui.composeables.AppScreenPreviews
-import com.brandoncano.capacitorcalculator.ui.composeables.AppTopAppBar
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
+import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
+import com.brandoncano.sharedcomponents.composables.AppCard
+import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
+import com.brandoncano.sharedcomponents.composables.AppTopAppBar
+import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
+import com.brandoncano.sharedcomponents.screen.AppInfoCard
+import com.brandoncano.sharedcomponents.screen.AuthorCard
+import com.brandoncano.sharedcomponents.text.onSurfaceVariant
+import com.brandoncano.sharedcomponents.text.textStyleBody
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
 
 @Composable
-fun AboutScreen(context: Context) {
-    Surface(modifier = Modifier.fillMaxSize()) {
-        ContentView(context)
+fun AboutScreen(
+    onNavigateBack: () -> Unit,
+    onViewPrivacyPolicyTapped: () -> Unit,
+    onCommonCodesTapped: () -> Unit,
+    onCapacitorValuesTapped: () -> Unit,
+    onCapacitorTypesTapped: () -> Unit,
+    onRateThisAppTapped: () -> Unit,
+    onViewOurAppsTapped: () -> Unit,
+    onDonateTapped: () -> Unit,
+) {
+    Scaffold(
+        topBar = {
+            AppTopAppBar(
+                titleText = stringResource(R.string.about_title),
+                navigationIcon = Icons.Filled.Close,
+                onNavigateBack = onNavigateBack,
+            )
+        }
+    ) { paddingValues ->
+        AboutScreenContent(
+            paddingValues = paddingValues,
+            onViewPrivacyPolicyTapped = onViewPrivacyPolicyTapped,
+            onRateThisAppTapped = onRateThisAppTapped,
+            onCommonCodesTapped = onCommonCodesTapped,
+            onCapacitorValuesTapped = onCapacitorValuesTapped,
+            onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onViewOurAppsTapped = onViewOurAppsTapped,
+            onDonateTapped = onDonateTapped,
+        )
     }
 }
 
 @Composable
-private fun ContentView(context: Context) {
+private fun AboutScreenContent(
+    paddingValues: PaddingValues,
+    onViewPrivacyPolicyTapped: () -> Unit,
+    onCommonCodesTapped: () -> Unit,
+    onCapacitorValuesTapped: () -> Unit,
+    onCapacitorTypesTapped: () -> Unit,
+    onRateThisAppTapped: () -> Unit,
+    onViewOurAppsTapped: () -> Unit,
+    onDonateTapped: () -> Unit,
+) {
+    val sidePadding = dimensionResource(R.dimen.app_side_padding)
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .verticalScroll(rememberScrollState()),
-        horizontalAlignment = Alignment.Start
+            .verticalScroll(rememberScrollState())
+            .padding(paddingValues)
+            .padding(horizontal = sidePadding),
+        horizontalAlignment = Alignment.Start,
     ) {
-        AppTopAppBar(stringResource(R.string.about_title))
+        Spacer(modifier = Modifier.height(12.dp))
         AuthorCard()
-        AppInfoCard()
-        ViewPrivacyPolicy(context)
-        DescriptionCard()
-        OurAppsButtons(context)
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(16.dp))
+        AppInfoCard(R.string.version, R.string.last_updated)
+        Spacer(modifier = Modifier.height(16.dp))
+        AppArrowCardButton(
+            ArrowCardButtonContents(
+                imageVector = Icons.Outlined.Policy,
+                text = stringResource(id = R.string.about_view_privacy_policy),
+                onClick = onViewPrivacyPolicyTapped,
+            )
+        )
+        Spacer(modifier = Modifier.height(32.dp))
+        Text(
+            text = stringResource(id = R.string.about_description),
+            modifier = Modifier.padding(bottom = 12.dp),
+            style = textStyleHeadline(),
+        )
+        AppCard {
+            Text(
+                text = stringResource(id = R.string.about_description_part_01),
+                modifier = Modifier.padding(16.dp),
+                style = textStyleBody().onSurfaceVariant(),
+            )
+            Text(
+                text = stringResource(id = R.string.about_description_part_02),
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
+                style = textStyleBody().onSurfaceVariant(),
+            )
+            Text(
+                text = stringResource(id = R.string.about_description_part_03),
+                modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
+                style = textStyleBody().onSurfaceVariant(),
+            )
+        }
+        Spacer(modifier = Modifier.height(32.dp))
+        CapacitorInformationButtons(
+            onCommonCodesTapped = onCommonCodesTapped,
+            onCapacitorValuesTapped = onCapacitorValuesTapped,
+            onCapacitorTypesTapped = onCapacitorTypesTapped,
+        )
+        Spacer(modifier = Modifier.height(32.dp))
+        OurAppsButtons(
+            onRateThisAppTapped = onRateThisAppTapped,
+            onViewOurAppsTapped = onViewOurAppsTapped,
+            onDonateTapped = onDonateTapped,
+        )
+        Spacer(modifier = Modifier.height(48.dp))
     }
 }
 
 @AppScreenPreviews
 @Composable
 private fun AboutPreview() {
-    val app = MainActivity()
     CapacitorCalculatorTheme {
-        AboutScreen(app)
+        AboutScreen(
+            onNavigateBack = {},
+            onViewPrivacyPolicyTapped = {},
+            onCommonCodesTapped = {},
+            onCapacitorValuesTapped = {},
+            onCapacitorTypesTapped = {},
+            onRateThisAppTapped = {},
+            onViewOurAppsTapped = {},
+            onDonateTapped = {},
+        )
     }
 }

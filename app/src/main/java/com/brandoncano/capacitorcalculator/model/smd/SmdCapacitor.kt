@@ -1,6 +1,6 @@
 package com.brandoncano.capacitorcalculator.model.smd
 
-import com.brandoncano.capacitorcalculator.components.SmdMode
+import com.brandoncano.capacitorcalculator.data.SmdMode
 import com.brandoncano.capacitorcalculator.util.formatCapacitance
 
 data class SmdCapacitor(
@@ -27,8 +27,8 @@ data class SmdCapacitor(
     }
 
     override fun toString(): String {
-        val type = "SMD Capacitor: ${getSmdMode().name}"
+        val type = getSmdMode().name
         val capacitance = this.formatCapacitance()
-        return "$type\nCode = $code\nCapacitance = $capacitance"
+        return "$type\nCode: $code\nCapacitance = $capacitance"
     }
 }

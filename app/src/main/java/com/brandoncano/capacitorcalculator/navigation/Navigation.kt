@@ -1,102 +1,92 @@
 package com.brandoncano.capacitorcalculator.navigation
 
 import android.content.Context
-import androidx.compose.animation.EnterTransition
-import androidx.compose.animation.ExitTransition
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideInVertically
-import androidx.compose.animation.slideOutHorizontally
-import androidx.compose.animation.slideOutVertically
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.brandoncano.capacitorcalculator.model.CapacitorViewModelFactory
-import com.brandoncano.capacitorcalculator.model.capacitor.CapacitorCapacitorViewModel
-import com.brandoncano.capacitorcalculator.model.smd.SmdCapacitorViewModel
-import com.brandoncano.capacitorcalculator.ui.screens.about.AboutScreen
-import com.brandoncano.capacitorcalculator.ui.screens.capacitor.CapacitorCalculatorScreen
-import com.brandoncano.capacitorcalculator.ui.screens.capacitorvalues.CapacitorValuesScreen
-import com.brandoncano.capacitorcalculator.ui.screens.chart.ChartScreen
-import com.brandoncano.capacitorcalculator.ui.screens.home.HomeScreen
-import com.brandoncano.capacitorcalculator.ui.screens.information.InformationScreen
-import com.brandoncano.capacitorcalculator.ui.screens.informationdetails.InformationDetailsScreen
-import com.brandoncano.capacitorcalculator.ui.screens.smd.SmdCalculatorScreen
+import com.brandoncano.capacitorcalculator.constants.Links
+import com.brandoncano.capacitorcalculator.navigation.calculators.capacitorAdvancedCodeScreen
+import com.brandoncano.capacitorcalculator.navigation.calculators.capacitorCodeValuesScreen
+import com.brandoncano.capacitorcalculator.navigation.calculators.smdScreen
+import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypeDetails
+import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypes
+import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorValues
+import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
+import com.brandoncano.sharedcomponents.data.Apps
+import com.brandoncano.sharedcomponents.navigation.SharedScreens
+import com.brandoncano.sharedcomponents.navigation.donateScreen
+import com.brandoncano.sharedcomponents.navigation.viewOurAppsScreen
+import com.brandoncano.sharedcomponents.utils.OpenLink
 
 /**
  * Note: Keep each navigation route in alphabetical order
  */
 
 @Composable
-fun Navigation(context: Context) {
+fun Navigation(onOpenThemeDialog: () -> Unit) {
     val navController = rememberNavController()
     NavHost(
         navController = navController,
         startDestination = Screen.Home.route
     ) {
-        composable(
-            route = Screen.About.route,
-            enterTransition = { slideInVertically(initialOffsetY = { it }) },
-            exitTransition = { slideOutVertically(targetOffsetY = { it }) },
-        ) {
-            AboutScreen(context)
-        }
-        composable(
-            route = Screen.CapacitorCalculator.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            val viewModel = viewModel<CapacitorCapacitorViewModel>(factory = CapacitorViewModelFactory(context))
-            val capacitor = viewModel.getCapacitorLiveData()
-            CapacitorCalculatorScreen(context, navController, viewModel, capacitor)
-        }
-        composable(
-            route = Screen.CapacitorValues.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            CapacitorValuesScreen(context, navController)
-        }
-        composable(
-            route = Screen.Chart.route,
-            enterTransition = { slideInVertically(initialOffsetY = { it }) },
-            exitTransition = { slideOutVertically(targetOffsetY = { it }) },
-        ) {
-            ChartScreen(context, navController)
-        }
-        composable(
-            route = Screen.Home.route,
-            enterTransition = { EnterTransition.None },
-            exitTransition = { ExitTransition.None },
-        ) {
-            HomeScreen(context, navController)
-        }
-        composable(
-            route = Screen.Information.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            InformationScreen(context, navController)
-        }
-        composable(
-            route = "${Screen.InformationDetails.route}/{arg1}",
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) { backStackEntry ->
-            val arg1 = backStackEntry.arguments?.getString("arg1") ?: ""
-            val informationDetails = InformationDetails.fromRoute(arg1)
-            InformationDetailsScreen(informationDetails)
-        }
-        composable(
-            route = Screen.SmdCalculator.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            val viewModel = viewModel<SmdCapacitorViewModel>(factory = CapacitorViewModelFactory(context))
-            val navBarPosition = viewModel.getNavBarSelection()
-            val capacitor = viewModel.getCapacitorLiveData()
-            SmdCalculatorScreen(context, navController, viewModel, navBarPosition, capacitor)
-        }
+        aboutScreen(navController)
+        capacitorAdvancedCodeScreen(navController)
+        capacitorCodeValuesScreen(navController)
+        homeScreen(navController, onOpenThemeDialog)
+        learnCapacitorTypes(navController)
+        learnCapacitorTypeDetails(navController)
+        learnCapacitorValues(navController)
+        learnCommonCodes(navController)
+        smdScreen(navController)
+        // from shared library
+        donateScreen(navController)
+        viewOurAppsScreen(navController, Apps.Capacitor)
     }
+}
+
+fun navigateToAbout(navController: NavHostController) {
+    navController.navigate(Screen.About.route)
+}
+
+fun navigateToCapacitorCode(navController: NavHostController) {
+    navController.navigate(Screen.CapacitorCodeValues.route) {
+        popUpTo(Screen.Home.route)
+    }
+}
+
+fun navigateToAdvancedCapacitorCode(navController: NavHostController) {
+    navController.navigate(Screen.CapacitorAdvancedCalculator.route) {
+        popUpTo(Screen.Home.route)
+    }
+}
+
+fun navigateToSmd(navController: NavHostController) {
+    navController.navigate(Screen.Smd.route) {
+        popUpTo(Screen.Home.route)
+    }
+}
+
+fun navigateToCommonCodes(navController: NavHostController) {
+    navController.navigate(Screen.CommonCodes.route)
+}
+
+fun navigateToCapacitorTypes(navController: NavHostController) {
+    navController.navigate(Screen.CapacitorTypes.route)
+}
+
+fun navigateToCapacitorValues(navController: NavHostController) {
+    navController.navigate(Screen.CapacitorValues.route)
+}
+
+fun navigateToGooglePlay(context: Context) {
+    OpenLink.execute(context, Links.CAPACITOR_PLAYSTORE)
+}
+
+fun navigateToOurApps(navController: NavHostController) {
+    navController.navigate(SharedScreens.ViewOurApps.route)
+}
+
+fun navigateToDonate(navController: NavHostController) {
+    navController.navigate(SharedScreens.Donate.route)
 }
