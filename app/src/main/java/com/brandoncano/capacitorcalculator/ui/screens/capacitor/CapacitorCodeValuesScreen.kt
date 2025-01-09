@@ -11,7 +11,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.outlined.Lightbulb
+import androidx.compose.material.icons.automirrored.outlined.ViewList
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -164,7 +164,7 @@ private fun CapacitorCodeValuesContent(
             )
             AppArrowCardButton(
                 ArrowCardButtonContents(
-                    imageVector = Icons.Outlined.Lightbulb,
+                    imageVector = Icons.AutoMirrored.Outlined.ViewList,
                     text = stringResource(id = R.string.capacitor_calculator_button_text),
                     onClick = onLearnMoreTapped,
                 )

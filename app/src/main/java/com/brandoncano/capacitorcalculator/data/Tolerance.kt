@@ -28,10 +28,6 @@ enum class Tolerance(val letter: String, val tolerance: String) {
             return entries.filter { it != B && it != C }.map { it.tolerance }
         }
 
-        fun getLetterValue(tolerance: String): String {
-            return entries.find { it.tolerance == tolerance }?.letter ?: ""
-        }
-
         fun getToleranceValue(letter: String): String {
             return entries.find { it.letter == letter }?.tolerance ?: ""
         }

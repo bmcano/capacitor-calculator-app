@@ -26,6 +26,7 @@ import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
 import com.brandoncano.sharedcomponents.text.textStyleCaption
 import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.text.textStyleSubhead
 
 @Composable
 fun CapacitorTypesScreen(
@@ -64,8 +65,13 @@ private fun CapacitorTypesScreenContent(
     ) {
         Text(
             text = stringResource(id = R.string.information_header_text),
-            modifier = Modifier.padding(vertical = 24.dp),
+            modifier = Modifier.padding(top = 24.dp, bottom = 12.dp),
             style = textStyleHeadline().onSurfaceVariant(),
+        )
+        Text(
+            text = stringResource(id = R.string.information_body_text),
+            modifier = Modifier.padding(bottom = 24.dp),
+            style = textStyleSubhead().onSurfaceVariant(),
         )
         // Note: Order and categorization was done similar to Wikipedia
         ArrowCardButtonWithSubText(

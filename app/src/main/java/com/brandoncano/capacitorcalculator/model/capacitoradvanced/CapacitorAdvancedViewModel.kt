@@ -2,10 +2,12 @@ package com.brandoncano.capacitorcalculator.model.capacitoradvanced
 
 import android.content.Context
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.brandoncano.capacitorcalculator.util.formatCapacitance
 import com.brandoncano.capacitorcalculator.util.isCodeInvalid
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class CapacitorAdvancedViewModel(context: Context) : ViewModel() {
 
@@ -16,6 +18,14 @@ class CapacitorAdvancedViewModel(context: Context) : ViewModel() {
 
     private val _isError = MutableStateFlow(false)
     val isError: StateFlow<Boolean> get() = _isError
+
+    init {
+        viewModelScope.launch {
+            val loadedResistor = repository.loadCapacitor()
+            _capacitor.value = loadedResistor
+            updateErrorState()
+        }
+    }
 
     fun clear() {
         _capacitor.value = CapacitorAdvanced()

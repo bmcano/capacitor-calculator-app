@@ -55,7 +55,9 @@ private fun CapacitorTypeListItem(
     onClick: () -> Unit,
 ) {
     Row(
-        modifier = Modifier.clickable(role = Role.Button, onClick = onClick),
+        modifier = Modifier
+            .clickable(role = Role.Button, onClick = onClick)
+            .padding(vertical = 4.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Column(

@@ -21,8 +21,8 @@ import com.brandoncano.capacitorcalculator.ui.theme.mica_capacitor
 import com.brandoncano.capacitorcalculator.ui.theme.white
 import com.brandoncano.sharedcomponents.composables.AppComponentPreviews
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
-import com.brandoncano.sharedcomponents.text.textStyleBody
 import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.text.textStyleSubhead
 import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 @Composable
@@ -112,7 +112,7 @@ fun HeaderBodyInformation(
             Text(
                 text = stringResource(id = body),
                 modifier = Modifier.padding(top = 12.dp),
-                style = textStyleBody().onSurfaceVariant(),
+                style = textStyleSubhead().onSurfaceVariant(),
             )
         }
     }
