@@ -36,13 +36,13 @@ import com.brandoncano.capacitorcalculator.constants.DropdownLists
 import com.brandoncano.capacitorcalculator.constants.Links
 import com.brandoncano.capacitorcalculator.model.smd.SmdCapacitor
 import com.brandoncano.capacitorcalculator.ui.composables.AboutAppMenuItem
-import com.brandoncano.capacitorcalculator.ui.composables.ClearSelectionsMenuItem
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
 import com.brandoncano.sharedcomponents.composables.AppDropDownMenu
 import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
 import com.brandoncano.sharedcomponents.composables.AppNavigationBar
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 import com.brandoncano.sharedcomponents.composables.AppTextField
+import com.brandoncano.sharedcomponents.composables.ClearSelectionsMenuItem
 import com.brandoncano.sharedcomponents.composables.FeedbackMenuItem
 import com.brandoncano.sharedcomponents.composables.ShareTextMenuItem
 import com.brandoncano.sharedcomponents.data.NavigationBarOptions
