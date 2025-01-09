@@ -1,25 +1,18 @@
 package com.brandoncano.capacitorcalculator.navigation
 
 import android.content.Context
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.brandoncano.capacitorcalculator.constants.Links
-import com.brandoncano.capacitorcalculator.model.CapacitorViewModelFactory
-import com.brandoncano.capacitorcalculator.model.capacitorlegacy.CapacitorCapacitorViewModel
+import com.brandoncano.capacitorcalculator.navigation.calculators.capacitorAdvancedCodeScreen
 import com.brandoncano.capacitorcalculator.navigation.calculators.capacitorCodeValuesScreen
 import com.brandoncano.capacitorcalculator.navigation.calculators.smdScreen
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypeDetails
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypes
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorValues
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
-import com.brandoncano.capacitorcalculator.ui.screens.capacitoradvanced.CapacitorCalculatorScreen
 import com.brandoncano.sharedcomponents.data.Apps
 import com.brandoncano.sharedcomponents.navigation.SharedScreens
 import com.brandoncano.sharedcomponents.navigation.donateScreen
@@ -33,12 +26,12 @@ import com.brandoncano.sharedcomponents.utils.OpenLink
 @Composable
 fun Navigation(onOpenThemeDialog: () -> Unit) {
     val navController = rememberNavController()
-    val context = LocalContext.current
     NavHost(
         navController = navController,
         startDestination = Screen.Home.route
     ) {
         aboutScreen(navController)
+        capacitorAdvancedCodeScreen(navController)
         capacitorCodeValuesScreen(navController)
         homeScreen(navController, onOpenThemeDialog)
         learnCapacitorTypes(navController)
@@ -49,17 +42,6 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
         // from shared library
         donateScreen(navController)
         viewOurAppsScreen(navController, Apps.Capacitor)
-
-        // TODO - migrate this screen
-        composable(
-            route = Screen.CapacitorAdvancedCalculator.route,
-            enterTransition = { slideInHorizontally(initialOffsetX = { it }) },
-            exitTransition = { slideOutHorizontally(targetOffsetX = { it }) },
-        ) {
-            val viewModel = viewModel<CapacitorCapacitorViewModel>(factory = CapacitorViewModelFactory(context))
-            val capacitor = viewModel.getCapacitorLiveData()
-            CapacitorCalculatorScreen(context, navController, viewModel, capacitor)
-        }
     }
 }
 

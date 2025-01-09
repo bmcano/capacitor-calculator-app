@@ -1,4 +1,4 @@
-package com.brandoncano.capacitorcalculator.model.capacitorlegacy
+package com.brandoncano.capacitorcalculator.model.capacitoradvanced
 
 import android.content.Context
 import com.brandoncano.capacitorcalculator.data.SharedPreferences
@@ -25,20 +25,20 @@ class CapacitorRepository(context: Context) {
         SharedPreferences.VOLTAGE_DROPDOWN_CAPACITOR.clearData(application)
     }
 
-    fun loadCapacitor(): CapacitorLegacy {
+    fun loadCapacitor(): CapacitorAdvanced {
         val code = SharedPreferences.CODE_INPUT_CAPACITOR.loadData(application)
         val capacitance = SharedPreferences.CAPACITANCE_INPUT_CAPACITOR.loadData(application)
         val units = SharedPreferences.UNITS_DROPDOWN_CAPACITOR.loadData(application)
         val tolerance = SharedPreferences.TOLERANCE_DROPDOWN_CAPACITOR.loadData(application)
         val voltageRating = SharedPreferences.VOLTAGE_DROPDOWN_CAPACITOR.loadData(application)
-        return CapacitorLegacy(code, capacitance, tolerance, units, voltageRating)
+        return CapacitorAdvanced(code, capacitance, tolerance, units, voltageRating)
     }
 
-    fun saveCapacitor(capacitorLegacy: CapacitorLegacy) {
-        SharedPreferences.CODE_INPUT_CAPACITOR.saveData(application, capacitorLegacy.code)
-        SharedPreferences.CAPACITANCE_INPUT_CAPACITOR.saveData(application, capacitorLegacy.capacitance)
-        SharedPreferences.UNITS_DROPDOWN_CAPACITOR.saveData(application, capacitorLegacy.units)
-        SharedPreferences.TOLERANCE_DROPDOWN_CAPACITOR.saveData(application, capacitorLegacy.tolerance)
-        SharedPreferences.VOLTAGE_DROPDOWN_CAPACITOR.saveData(application, capacitorLegacy.voltageRating)
+    fun saveCapacitor(capacitorAdvanced: CapacitorAdvanced) {
+        SharedPreferences.CODE_INPUT_CAPACITOR.saveData(application, capacitorAdvanced.code)
+        SharedPreferences.CAPACITANCE_INPUT_CAPACITOR.saveData(application, capacitorAdvanced.capacitance)
+        SharedPreferences.UNITS_DROPDOWN_CAPACITOR.saveData(application, capacitorAdvanced.units)
+        SharedPreferences.TOLERANCE_DROPDOWN_CAPACITOR.saveData(application, capacitorAdvanced.tolerance)
+        SharedPreferences.VOLTAGE_DROPDOWN_CAPACITOR.saveData(application, capacitorAdvanced.voltageRating)
     }
 }

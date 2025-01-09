@@ -1,10 +1,9 @@
 package com.brandoncano.capacitorcalculator.util
 
-import com.brandoncano.capacitorcalculator.constants.Units
 import com.brandoncano.capacitorcalculator.data.Tolerance
 import com.brandoncano.capacitorcalculator.data.VoltageRating
 import com.brandoncano.capacitorcalculator.model.capacitor.Capacitor
-import com.brandoncano.capacitorcalculator.model.capacitorlegacy.CapacitorLegacy
+import com.brandoncano.capacitorcalculator.model.capacitoradvanced.CapacitorAdvanced
 import com.brandoncano.capacitorcalculator.model.smd.SmdCapacitor
 
 /**
@@ -29,31 +28,23 @@ fun String.formatCode(units: String): String {
 }
 
 // Capacitor advanced
-fun CapacitorLegacy.isCodeInvalid(): Boolean {
+fun CapacitorAdvanced.isCodeInvalid(): Boolean {
     return !IsValidCode.execute(this.code)
 }
 
-fun CapacitorLegacy.formatCapacitance(): String {
+fun CapacitorAdvanced.formatCapacitance(): String {
     return CapacitanceFormatter.execute(this.code, this.units)
 }
 
-fun CapacitorLegacy.getTolerancePercentage(): String {
+fun CapacitorAdvanced.getTolerancePercentage(): String {
     return Tolerance.getToleranceValue(this.tolerance)
 }
 
-fun CapacitorLegacy.getVoltageRating(): String {
+fun CapacitorAdvanced.getVoltageRating(): String {
     return VoltageRating.getVoltageValue(this.voltageRating)
 }
 
-fun CapacitorLegacy.isCapacitanceInvalid(): Boolean {
-    val units = this.units.ifEmpty { Units.PF }
-    return !IsValidCapacitance.execute(this.capacitance, units)
-}
-
-fun CapacitorLegacy.formatCode(): String {
-    return CodeFormatter.execute(this.capacitance, this.units)
-}
-
+// SMD capacitor
 fun SmdCapacitor.isSmdInputInvalid(): Boolean {
     return !IsValidSmdCode.execute(this.code, this.getSmdMode())
 }
