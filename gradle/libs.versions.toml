@@ -2,7 +2,7 @@
 # libraries
 activity-compose = "1.9.3" # 1/8/25
 appcompat = "1.7.0" # 7/7/24
-bmcano = "1.4.3" # 1/8/25 - this is our shared library
+bmcano = "1.4.4" # 1/11/25 - this is our shared library
 browser = "1.8.0" # 7/7/24
 compose = "1.7.6" # 1/8/25
 compose-bom = "2024.12.01" # 1/8/25
@@ -16,7 +16,7 @@ ostermiller = "1.07.00" # 7/21/24
 pager = "0.34.0" # 7/18/24
 ui-test-junit4 = "1.7.6" # 1/8/25
 # gradle/language
-agp = "8.7.3" # 10/7/24
+agp = "8.8.0" # 1/11/24
 kotlin = "2.0.0" # 7/7/24
 ktlint = "11.3.1" # 7/10/24
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Capacitor Code Calculator</string>
+    <string name="app_name">Capacitor Calculator</string>
     <!-- about screen -->
     <string name="about_title">About The App</string>
     <string name="about_description">Description</string>
@@ -159,9 +159,6 @@
     <string name="hint_nf">Nano-farads (nF)</string>
     <string name="hint_pf">Pico-farads (pF)</string>
     <!-- menu items -->
-    <string name="menu_share">Share</string>
-    <string name="menu_feedback">Feedback</string>
-    <string name="menu_clear">Clear selections</string>
     <string name="menu_about">About the app</string>
     <string name="menu_app_theme">App appearance</string>
     <!-- navbar items -->
