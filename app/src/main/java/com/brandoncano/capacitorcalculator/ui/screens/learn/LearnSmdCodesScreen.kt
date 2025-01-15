@@ -29,7 +29,6 @@ import com.brandoncano.sharedcomponents.text.onSurfaceVariant
 import com.brandoncano.sharedcomponents.text.textStyleBody
 import com.brandoncano.sharedcomponents.text.textStyleCallout
 import com.brandoncano.sharedcomponents.text.textStyleHeadline
-import com.brandoncano.sharedcomponents.text.textStyleLargeTitle
 import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 @Composable
@@ -63,7 +62,7 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
         Text(
             text = stringResource(R.string.cap_info_intro_title),
             modifier = Modifier.padding(vertical = 12.dp),
-            style = textStyleLargeTitle(),
+            style = textStyleTitle(),
         )
         Text(
             text = stringResource(R.string.cap_info_intro_body),
@@ -72,7 +71,7 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
         )
         Text(
             text = stringResource(R.string.cap_info_codes_body),
-            modifier = Modifier.padding(bottom = 24.dp),
+            modifier = Modifier.padding(bottom = 32.dp),
             style = textStyleBody().onSurfaceVariant(),
         )
 
@@ -84,7 +83,7 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
             code = "Code: xyz",
             exampleCode = "Code: 113",
         )
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(32.dp))
         CodeInfoSection(
             headlineRes = R.string.cap_four_code_headline,
             bodyRes = R.string.cap_four_code_body,
@@ -96,7 +95,7 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
         AppDivider(modifier = Modifier.padding(vertical = 16.dp))
         Text(
             text = stringResource(R.string.cap_four_digit_note),
-            modifier = Modifier.padding(bottom = 24.dp),
+            modifier = Modifier.padding(bottom = 32.dp),
             style = textStyleCallout().onSurfaceVariant(),
         )
         CodeInfoSection(

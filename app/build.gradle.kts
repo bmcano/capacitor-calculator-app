@@ -14,7 +14,7 @@ android {
         minSdk = 24
         targetSdk = 35
         versionCode = 11 // for 2.2.0
-        versionName = "2.2.0-develop"
+        versionName = "2.2.0"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -23,7 +23,7 @@ android {
     applicationVariants.configureEach {
         val suffix = if (buildType.name == "debug") ", DEBUG" else ""
         resValue("string", "version", "$versionName$suffix")
-        resValue("string", "last_updated", "1/11/2025")
+        resValue("string", "last_updated", "1/15/2025")
     }
     buildTypes {
         release {
