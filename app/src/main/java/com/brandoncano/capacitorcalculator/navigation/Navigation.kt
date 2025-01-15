@@ -13,6 +13,7 @@ import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypeDe
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorTypes
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCapacitorValues
 import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
+import com.brandoncano.capacitorcalculator.navigation.learn.learnSmdCapacitorCodes
 import com.brandoncano.sharedcomponents.data.Apps
 import com.brandoncano.sharedcomponents.navigation.SharedScreens
 import com.brandoncano.sharedcomponents.navigation.donateScreen
@@ -38,6 +39,7 @@ fun Navigation(onOpenThemeDialog: () -> Unit) {
         learnCapacitorTypeDetails(navController)
         learnCapacitorValues(navController)
         learnCommonCodes(navController)
+        learnSmdCapacitorCodes(navController)
         smdScreen(navController)
         // from shared library
         donateScreen(navController)
@@ -77,6 +79,10 @@ fun navigateToCapacitorTypes(navController: NavHostController) {
 
 fun navigateToCapacitorValues(navController: NavHostController) {
     navController.navigate(Screen.CapacitorValues.route)
+}
+
+fun navigateToSmdCodeSystems(navController: NavHostController) {
+    navController.navigate(Screen.SmdCodes.route)
 }
 
 fun navigateToGooglePlay(context: Context) {

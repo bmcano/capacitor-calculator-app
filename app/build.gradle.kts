@@ -13,7 +13,7 @@ android {
         applicationId = "com.brandoncano.capacitorcalculator"
         minSdk = 24
         targetSdk = 35
-        versionCode = 11 // for 2.1.1
+        versionCode = 11 // for 2.2.0
         versionName = "2.2.0-develop"
 
         vectorDrawables {

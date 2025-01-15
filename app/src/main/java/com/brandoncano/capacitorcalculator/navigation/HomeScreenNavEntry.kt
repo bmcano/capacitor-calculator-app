@@ -34,6 +34,7 @@ fun NavGraphBuilder.homeScreen(
             onCommonCodesTapped = { navigateToCommonCodes(navHostController) },
             onCapacitorValuesTapped = { navigateToCapacitorValues(navHostController) },
             onCapacitorTypesTapped = { navigateToCapacitorTypes(navHostController) },
+            onSmdCodeSystemsTapped = { navigateToSmdCodeSystems(navHostController) },
             onRateThisAppTapped = { navigateToGooglePlay(context) },
             onViewOurAppsTapped = { navigateToOurApps(navHostController) },
             onDonateTapped = { navigateToDonate(navHostController) },

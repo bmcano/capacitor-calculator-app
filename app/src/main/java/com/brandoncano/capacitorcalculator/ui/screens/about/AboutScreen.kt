@@ -41,6 +41,7 @@ fun AboutScreen(
     onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
     onCapacitorTypesTapped: () -> Unit,
+    onSmdCodeSystemsTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
     onDonateTapped: () -> Unit,
@@ -61,6 +62,7 @@ fun AboutScreen(
             onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
             onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onSmdCodeSystemsTapped = onSmdCodeSystemsTapped,
             onViewOurAppsTapped = onViewOurAppsTapped,
             onDonateTapped = onDonateTapped,
         )
@@ -74,6 +76,7 @@ private fun AboutScreenContent(
     onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
     onCapacitorTypesTapped: () -> Unit,
+    onSmdCodeSystemsTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
     onDonateTapped: () -> Unit,
@@ -127,6 +130,7 @@ private fun AboutScreenContent(
             onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
             onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onSmdCodeSystemsTapped = onSmdCodeSystemsTapped,
         )
         Spacer(modifier = Modifier.height(32.dp))
         OurAppsButtons(
@@ -148,6 +152,7 @@ private fun AboutPreview() {
             onCommonCodesTapped = {},
             onCapacitorValuesTapped = {},
             onCapacitorTypesTapped = {},
+            onSmdCodeSystemsTapped = {},
             onRateThisAppTapped = {},
             onViewOurAppsTapped = {},
             onDonateTapped = {},

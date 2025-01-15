@@ -40,6 +40,7 @@
     <string name="home_common_codes">Common codes</string>
     <string name="home_capacitor_values">Capacitor values</string>
     <string name="home_information_button">Capacitor types</string>
+    <string name="home_smd_codes_button">SMD code systems</string>
     <!-- information screen -->
     <string name="information_title">Capacitor Types</string>
     <string name="information_body_text">Capacitors come in many shapes and sizes, each with slight variations on which markings they have. For the most part if the capacitance is not directly marked, a three digit code determines the capacitance.</string>
@@ -146,6 +147,29 @@
     <string name="variable_details_characteristics_3">A split stator variable capacitor uses two rotor electrode assemblies placed axially behind one another, removing the 90° limit found in butterfly designs. Instead of multiple sections, each half of the rotor is mounted on opposite sides of the axis.</string>
     <string name="variable_details_characteristics_4">"Differential variable capacitors also include two independent stators. However, unlike a butterfly capacitor—where both sections increase in unison—one stator's capacitance grows while the other's diminishes, keeping the sum of both stators' capacitances constant."</string>
     <string name="variable_details_applications">Variable capacitors frequently appear in LC circuits for tuning a resonant frequency, such as in radio tuning (earning the name \"tuning capacitor\"), or to provide variable reactance in applications like antenna matching networks.</string>
+    <!-- SMD info -->
+    <string name="cap_info_title">SMD Capacitor Codes</string>
+    <string name="cap_info_intro_title">Introduction</string>
+    <string name="cap_info_intro_body">SMD (Surface-Mount Device) capacitors use compact codes to represent capacitance values in small components. These codes follow international standards to convey value, tolerance, and format effectively.</string>
+    <string name="cap_info_codes_body">SMD capacitors use various coding systems, including three-digit, four-digit, and EIA codes. Each system follows a unique structure.</string>
+    <string name="cap_three_code_headline">Three-Digit Code</string>
+    <string name="cap_three_code_body">The three-digit code is commonly used for ceramic capacitors. The first two digits represent the significant figures, and the third digit is a multiplier. The equation is:</string>
+    <string name="cap_three_digit_formula">xy \u00D7 10\u1dbb</string>
+    <string name="cap_three_digit_example">11 \u00D7 10\u00b3 = 11000 pF</string>
+    <string name="cap_four_code_headline">Four-Digit Code</string>
+    <string name="cap_four_code_body">The four-digit code is very similar to the three-digit code, with the addition of a 4th value which indicates the tolerance.</string>
+    <string name="cap_four_digit_formula">xy \u00D7 10\u1dbb ±t%</string>
+    <string name="cap_four_digit_example">22 \u00D7 10\u00b2 J  = 2200 pF ±5%</string>
+    <string name="cap_four_digit_note">"The letter 'R' indicates the position of the decimal point for resistance values lower than 10 \u03A9. For example, 0R5 would be 0.5 \u03A9 and 0R01 would be 0.01 \u03A9."</string>
+    <string name="cap_eia_198_headline">EIA-198 Code</string>
+    <string name="cap_eia_198_body">The EIA-198 code uses a combination of letters and digits to encode capacitance values. The letter corresponds to the base capacitance value, and the digit is a multiplier.</string>
+    <string name="cap_eia_198_formula">Base Capacitance (pF) \u00D7 10\u02B8</string>
+    <string name="cap_eia_198_example">1.1 pF \u00D7 100 = 110 pF</string>
+    <string name="cap_eia_198_note">"The EIA-198 system is often used for very small capacitance values in precision applications. The table below shows the mapping of letters to base values and digits to multipliers. The exact values can be seen in the table below."</string>
+    <string name="cap_eia_198_base_capacitance_value">Base Capacitance</string>
+    <string name="cap_eia_198_base_capacitance_col1">Letter</string>
+    <string name="cap_eia_198_base_capacitance_col2">Capacitance</string>
+    <string name="info_smd_code_example">Example:</string>
     <!-- smd calculator screen -->
     <string name="smd_calculator_title">SMD Capacitor</string>
     <!-- OutlinedTextField hints -->

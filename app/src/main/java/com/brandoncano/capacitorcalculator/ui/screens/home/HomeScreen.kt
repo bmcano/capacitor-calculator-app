@@ -49,6 +49,7 @@ fun HomeScreen(
     onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
     onCapacitorTypesTapped: () -> Unit,
+    onSmdCodeSystemsTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
     onDonateTapped: () -> Unit,
@@ -76,6 +77,7 @@ fun HomeScreen(
             onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
             onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onSmdCodeSystemsTapped = onSmdCodeSystemsTapped,
             onRateThisAppTapped = onRateThisAppTapped,
             onViewOurAppsTapped = onViewOurAppsTapped,
             onDonateTapped = onDonateTapped
@@ -92,6 +94,7 @@ private fun HomeScreenContent(
     onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
     onCapacitorTypesTapped: () -> Unit,
+    onSmdCodeSystemsTapped: () -> Unit,
     onRateThisAppTapped: () -> Unit,
     onViewOurAppsTapped: () -> Unit,
     onDonateTapped: () -> Unit,
@@ -135,6 +138,7 @@ private fun HomeScreenContent(
             onCommonCodesTapped = onCommonCodesTapped,
             onCapacitorValuesTapped = onCapacitorValuesTapped,
             onCapacitorTypesTapped = onCapacitorTypesTapped,
+            onSmdCodeSystemsTapped = onSmdCodeSystemsTapped,
         )
         Spacer(modifier = Modifier.height(32.dp))
         OurAppsButtons(
@@ -160,6 +164,7 @@ private fun HomePreview() {
             onCommonCodesTapped = {},
             onCapacitorValuesTapped = {},
             onCapacitorTypesTapped = {},
+            onSmdCodeSystemsTapped = {},
             onRateThisAppTapped = {},
             onViewOurAppsTapped = {},
             onDonateTapped = {},

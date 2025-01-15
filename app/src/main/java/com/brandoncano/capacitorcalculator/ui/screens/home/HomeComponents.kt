@@ -7,6 +7,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ViewList
 import androidx.compose.material.icons.outlined.Calculate
 import androidx.compose.material.icons.outlined.Category
+import androidx.compose.material.icons.outlined.Memory
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,6 +27,7 @@ fun CapacitorInformationButtons(
     onCommonCodesTapped: () -> Unit,
     onCapacitorValuesTapped: () -> Unit,
     onCapacitorTypesTapped: () -> Unit,
+    onSmdCodeSystemsTapped: () -> Unit,
 ) {
     Column {
         Text(
@@ -49,6 +51,11 @@ fun CapacitorInformationButtons(
                 imageVector = Icons.Outlined.Category,
                 text = stringResource(id = R.string.home_information_button),
                 onClick = onCapacitorTypesTapped
+            ),
+            ArrowCardButtonContents(
+                imageVector = Icons.Outlined.Memory,
+                text = stringResource(id = R.string.home_smd_codes_button),
+                onClick = onSmdCodeSystemsTapped
             )
         )
     }
@@ -63,6 +70,7 @@ private fun ButtonsPreview() {
                 onCommonCodesTapped = {},
                 onCapacitorValuesTapped = {},
                 onCapacitorTypesTapped = {},
+                onSmdCodeSystemsTapped = {},
             )
         }
     }
