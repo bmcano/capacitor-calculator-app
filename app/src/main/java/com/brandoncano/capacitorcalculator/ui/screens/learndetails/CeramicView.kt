@@ -10,7 +10,7 @@ import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 @Composable
 fun CeramicView() {
     Column {
-        CeramicCapacitorImage()
+        CapacitorImage(R.drawable.img_ceramic)
         HeaderBodyInformation(
             header = R.string.information_details_general_information,
             R.string.ceramic_details_general_information_1,

@@ -77,4 +77,3 @@ val surfaceContainerHighestDark = Color(0xFF3D3230)
 // other colors
 val black = Color(0xFF00000F)
 val white = Color(0xFFF5F5F5)
-val mica_capacitor = Color(0xFF511726)

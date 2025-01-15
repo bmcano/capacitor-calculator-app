@@ -10,7 +10,7 @@ import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 @Composable
 fun ElectrolyticView() {
     Column {
-        ElectrolyticCapacitorImage()
+        CapacitorImage(R.drawable.img_electrolytic)
         HeaderBodyInformation(
             header = R.string.information_details_general_information,
             R.string.electrolytic_details_general_information,

@@ -160,10 +160,8 @@
     <string name="navbar_eia_198">EIA-198</string>
     <!-- content descriptions -->
     <string name="content_right_arrow">Right arrow</string>
-    <string name="content_description_ceramic_capacitor">Ceramic capacitor</string>
+    <string name="content_description_capacitor">Capacitor image</string>
     <string name="content_description_smd_capacitor">SMD capacitor</string>
-    <string name="content_description_electrolytic_capacitor">Electrolytic capacitor</string>
-    <string name="content_description_mica_capacitor">Mica capacitor</string>
     <!-- default values -->
     <string name="default_code">Enter code</string>
     <string name="default_smd_value">Enter code</string>

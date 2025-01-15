@@ -10,7 +10,7 @@ import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 @Composable
 fun MicaView() {
     Column {
-        MicaCapacitorImage()
+        CapacitorImage(R.drawable.img_mica)
         HeaderBodyInformation(
             header = R.string.information_details_general_information,
             R.string.mica_details_general_information,

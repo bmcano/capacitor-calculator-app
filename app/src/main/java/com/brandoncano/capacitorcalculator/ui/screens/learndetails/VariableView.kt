@@ -10,7 +10,7 @@ import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 @Composable
 fun VariableView() {
     Column {
-        // TODO - add images?
+        CapacitorImage(R.drawable.img_variable)
         HeaderBodyInformation(
             header = R.string.information_details_general_information,
             R.string.variable_details_general_information,

@@ -10,7 +10,7 @@ import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 @Composable
 fun FilmView() {
     Column {
-        // TODO - get film capacitor image(s) at some point (?)
+        CapacitorImage(R.drawable.img_film)
         HeaderBodyInformation(
             header = R.string.information_details_general_information,
             R.string.film_details_general_information,

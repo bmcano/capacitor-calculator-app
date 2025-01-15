@@ -10,7 +10,7 @@ import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 @Composable
 fun SuperCapacitorView() {
     Column {
-        // TODO - image?
+        CapacitorImage(R.drawable.img_super)
         HeaderBodyInformation(
             header = R.string.information_details_general_information,
             R.string.super_details_general_information,
