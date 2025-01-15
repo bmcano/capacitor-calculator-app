@@ -8,11 +8,11 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.brandoncano.capacitorcalculator.model.MainViewModel
 import com.brandoncano.capacitorcalculator.navigation.Navigation
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
 import com.brandoncano.sharedcomponents.composables.AppThemeDialog
 import com.brandoncano.sharedcomponents.data.ThemeMode
+import com.brandoncano.sharedcomponents.model.MainViewModel
 
 class MainActivity : ComponentActivity() {
 

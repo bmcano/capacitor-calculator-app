@@ -35,8 +35,8 @@ import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.constants.DropdownLists
 import com.brandoncano.capacitorcalculator.constants.Links
 import com.brandoncano.capacitorcalculator.model.smd.SmdCapacitor
-import com.brandoncano.capacitorcalculator.ui.composables.AboutAppMenuItem
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
+import com.brandoncano.sharedcomponents.composables.AboutAppMenuItem
 import com.brandoncano.sharedcomponents.composables.AppDropDownMenu
 import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
 import com.brandoncano.sharedcomponents.composables.AppNavigationBar

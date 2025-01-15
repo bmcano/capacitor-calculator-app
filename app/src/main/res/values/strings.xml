@@ -40,10 +40,6 @@
     <string name="home_common_codes">Common codes</string>
     <string name="home_capacitor_values">Capacitor values</string>
     <string name="home_information_button">Capacitor types</string>
-    <string name="home_our_apps_header_text">Support us</string>
-    <string name="home_button_rate_us">Rate this app</string>
-    <string name="home_button_view_apps">Check out our other apps</string>
-    <string name="home_button_donate">Donate</string>
     <!-- information screen -->
     <string name="information_title">Capacitor Types</string>
     <string name="information_body_text">Capacitors come in many shapes and sizes, each with slight variations on which markings they have. For the most part if the capacitance is not directly marked, a three digit code determines the capacitance.</string>
@@ -158,9 +154,6 @@
     <string name="hint_uf">Micro-farads (µF)</string>
     <string name="hint_nf">Nano-farads (nF)</string>
     <string name="hint_pf">Pico-farads (pF)</string>
-    <!-- menu items -->
-    <string name="menu_about">About the app</string>
-    <string name="menu_app_theme">App appearance</string>
     <!-- navbar items -->
     <string name="navbar_three_eia">Three Digit EIA</string>
     <string name="navbar_four_eia">Four Digit EIA</string>

@@ -28,8 +28,8 @@ import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.constants.Links
 import com.brandoncano.capacitorcalculator.data.CapacitorValue
 import com.brandoncano.capacitorcalculator.model.capacitor.Capacitor
-import com.brandoncano.capacitorcalculator.ui.composables.AboutAppMenuItem
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
+import com.brandoncano.sharedcomponents.composables.AboutAppMenuItem
 import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
 import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar

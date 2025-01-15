@@ -5,11 +5,8 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.outlined.ViewList
-import androidx.compose.material.icons.outlined.Apps
 import androidx.compose.material.icons.outlined.Calculate
 import androidx.compose.material.icons.outlined.Category
-import androidx.compose.material.icons.outlined.FavoriteBorder
-import androidx.compose.material.icons.outlined.Grade
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -57,48 +54,15 @@ fun CapacitorInformationButtons(
     }
 }
 
-@Composable
-fun OurAppsButtons(
-    onRateThisAppTapped: () -> Unit,
-    onViewOurAppsTapped: () -> Unit,
-    onDonateTapped: () -> Unit,
-) {
-    Column {
-        Text(
-            text = stringResource(id = R.string.home_our_apps_header_text),
-            modifier = Modifier.align(Alignment.Start),
-            style = textStyleHeadline(),
-        )
-        Spacer(modifier = Modifier.height(12.dp))
-        AppArrowCardButton(
-            ArrowCardButtonContents(
-                imageVector = Icons.Outlined.Grade,
-                text = stringResource(id = R.string.home_button_rate_us),
-                onClick = onRateThisAppTapped,
-            ),
-            ArrowCardButtonContents(
-                imageVector = Icons.Outlined.Apps,
-                text = stringResource(id = R.string.home_button_view_apps),
-                onClick = onViewOurAppsTapped,
-            ),
-            ArrowCardButtonContents(
-                imageVector = Icons.Outlined.FavoriteBorder,
-                text = stringResource(R.string.home_button_donate),
-                onClick = onDonateTapped,
-            ),
-        )
-    }
-}
-
 @AppComponentPreviews
 @Composable
 private fun ButtonsPreview() {
     CapacitorCalculatorTheme {
         Surface {
-            OurAppsButtons(
-                onRateThisAppTapped = {},
-                onViewOurAppsTapped = {},
-                onDonateTapped = {},
+            CapacitorInformationButtons(
+                onCommonCodesTapped = {},
+                onCapacitorValuesTapped = {},
+                onCapacitorTypesTapped = {},
             )
         }
     }
