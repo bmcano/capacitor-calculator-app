@@ -165,7 +165,6 @@
     <string name="cap_eia_198_body">The EIA-198 code uses a combination of letters and digits to encode capacitance values. The letter corresponds to the base capacitance value, and the digit is a multiplier.</string>
     <string name="cap_eia_198_formula">Base Capacitance (pF) \u00D7 10\u02B8</string>
     <string name="cap_eia_198_example">1.1 pF \u00D7 100 = 110 pF</string>
-    <string name="cap_eia_198_note">"The EIA-198 system is often used for very small capacitance values in precision applications. The table below shows the mapping of letters to base values and digits to multipliers. The exact values can be seen in the table below."</string>
     <string name="cap_eia_198_base_capacitance_value">Base Capacitance</string>
     <string name="cap_eia_198_base_capacitance_col1">Letter</string>
     <string name="cap_eia_198_base_capacitance_col2">Capacitance</string>
