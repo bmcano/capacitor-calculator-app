@@ -92,7 +92,7 @@ private fun CommonCodesScreenContent(paddingValues: PaddingValues) {
             itemsIndexed(codes) { index, code ->
                 ChartTableRow(code)
                 if (codes.size - 1 != index) {
-                    AppDivider(modifier = Modifier.padding(horizontal = 0.dp))
+                    AppDivider(modifier = Modifier)
                 }
             }
             item {

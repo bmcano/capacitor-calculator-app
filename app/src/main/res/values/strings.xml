@@ -158,28 +158,36 @@
     <string name="variable_details_characteristics_3">A split stator variable capacitor uses two rotor electrode assemblies placed axially behind one another, removing the 90° limit found in butterfly designs. Instead of multiple sections, each half of the rotor is mounted on opposite sides of the axis.</string>
     <string name="variable_details_characteristics_4">"Differential variable capacitors also include two independent stators. However, unlike a butterfly capacitor—where both sections increase in unison—one stator's capacitance grows while the other's diminishes, keeping the sum of both stators' capacitances constant."</string>
     <string name="variable_details_applications">Variable capacitors frequently appear in LC circuits for tuning a resonant frequency, such as in radio tuning (earning the name \"tuning capacitor\"), or to provide variable reactance in applications like antenna matching networks.</string>
+
     <!-- SMD info -->
-    <string name="cap_info_title">SMD Capacitor Codes</string>
-    <string name="cap_info_intro_title">Introduction</string>
-    <string name="cap_info_intro_body">SMD (Surface-Mount Device) capacitors use compact codes to represent capacitance values in small components. These codes follow international standards to convey value, tolerance, and format effectively.</string>
-    <string name="cap_info_codes_body">SMD capacitors use various coding systems, including three-digit, four-digit, and EIA codes. Each system follows a unique structure.</string>
-    <string name="cap_three_code_headline">Three-Digit Code</string>
-    <string name="cap_three_code_body">The three-digit code is commonly used for ceramic capacitors. The first two digits represent the significant figures, and the third digit is a multiplier. The equation is:</string>
-    <string name="cap_three_digit_formula">xy \u00D7 10\u1dbb</string>
-    <string name="cap_three_digit_example">11 \u00D7 10\u00b3 = 11000 pF</string>
-    <string name="cap_four_code_headline">Four-Digit Code</string>
-    <string name="cap_four_code_body">The four-digit code is very similar to the three-digit code, with the addition of a 4th value which indicates the tolerance.</string>
-    <string name="cap_four_digit_formula">xy \u00D7 10\u1dbb ±t%</string>
-    <string name="cap_four_digit_example">22 \u00D7 10\u00b2 J  = 2200 pF ±5%</string>
-    <string name="cap_four_digit_note">"The letter 'R' indicates the position of the decimal point for capacitance values lower than 10 \u03A9. For example, 0R5 would be 0.5 \u03A9 and 0R01 would be 0.01 \u03A9."</string>
-    <string name="cap_eia_198_headline">EIA-198 Code</string>
-    <string name="cap_eia_198_body">The EIA-198 code uses a combination of letters and digits to encode capacitance values. The letter corresponds to the base capacitance value, and the digit is a multiplier.</string>
-    <string name="cap_eia_198_formula">Base Capacitance (pF) \u00D7 10\u02B8</string>
-    <string name="cap_eia_198_example">1.1 pF \u00D7 100 = 110 pF</string>
-    <string name="cap_eia_198_base_capacitance_value">Base Capacitance</string>
-    <string name="cap_eia_198_base_capacitance_col1">Letter</string>
-    <string name="cap_eia_198_base_capacitance_col2">Capacitance</string>
-    <string name="info_smd_code_example">Example:</string>
+    <string name="smd_info_title">SMD Capacitor Codes</string>
+    <string name="smd_info_intro_title">Introduction</string>
+    <string name="smd_info_intro_body_1">SMD (Surface-Mount Device) capacitors are widely used in modern electronics due to their compact size and suitability for automated assembly. Because of limited space, these capacitors often use short alphanumeric codes instead of full labels.</string>
+    <string name="smd_info_intro_body_2">SMD capacitors use various coding systems, including three-digit, four-digit, and EIA-198 codes. Each system follows a unique structure.</string>
+    <string name="smd_three_code_title">Three-Digit Code</string>
+    <string name="smd_three_code_body">The three-digit code is commonly used for ceramic capacitors, but can also be found here. The first two digits represent the significant figures, and the third digit indicates the power-of-ten multiplier. This can be expressed mathematically as:</string>
+    <string name="smd_three_digit_formula">xy \u00D7 10\u1dbb</string>
+    <string name="smd_three_digit_example_label">For example, a capacitor labeled 113 equates to:</string>
+    <string name="smd_three_digit_example">11 \u00D7 10\u00b3 = 11,000 pF</string>
+    <string name="smd_four_code_title">Four-Digit Code</string>
+    <string name="smd_four_code_body">"The four-digit code closely resembles the three-digit code but adds a fourth character to indicate the capacitor's tolerance. The general format can be expressed as:"</string>
+    <string name="smd_four_digit_formula">xy \u00D7 10\u1dbb ±t%</string>
+    <string name="smd_four_digit_example_label">For example, a capacitor labeled 222J equates to:</string>
+    <string name="smd_four_digit_example">22 \u00D7 10\u00b2 J = 2,200 pF ±5%</string>
+    <string name="smd_four_digit_note">"Additionally, the letter 'R' sometimes denotes the decimal point for values lower than 10 \u03A9. For instance, 0R5 equates to 0.5 \u03A9 and 0R01 equates to 0.01 \u03A9."</string>
+    <string name="smd_eia_198_title">EIA-198 Code</string>
+    <string name="smd_eia_198_body">The EIA-198 code combines letters and digits to represent capacitance values. The letter indicates a base capacitance (in pico-farads), while the digit serves as a multiplier. The general format can be expressed as:</string>
+    <string name="smd_eia_198_formula">Base capacitance (pF) \u00D7 10\u02B8</string>
+    <string name="smd_eia_198_example_label">For example, a capacitor labeled B2 equates to:</string>
+    <string name="smd_eia_198_example">1.1 pF \u00D7 10\u00b2 = 110 pF</string>
+    <string name="smd_eia_198_base_capacitance_title">Base Capacitance</string>
+    <string name="smd_eia_198_base_capacitance_body">Below is a reference table for letters and their corresponding base capacitance values. Use the search box to quickly find a specific entry:</string>
+    <string name="smd_eia_198_base_capacitance_text_field">Search by letter or value</string>
+    <string name="smd_eia_198_base_capacitance_text_field_clear_label">Clear search</string>
+    <string name="smd_eia_198_base_capacitance_no_results">No results found.</string>
+    <string name="smd_eia_198_base_capacitance_col1">Letter</string>
+    <string name="smd_eia_198_base_capacitance_col2">Capacitance</string>
+
     <!-- smd calculator screen -->
     <string name="smd_calculator_title">SMD Capacitor</string>
     <!-- OutlinedTextField hints -->
