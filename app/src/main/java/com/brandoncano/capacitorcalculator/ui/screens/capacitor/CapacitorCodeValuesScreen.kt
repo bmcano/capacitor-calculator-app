@@ -131,7 +131,7 @@ private fun CapacitorCodeValuesContent(
             onOptionSelected = { onValueChanged(it, CapacitorValue.Code) },
         )
         AppTextField(
-            label = stringResource(id = R.string.hint_uf),
+            label = stringResource(id = R.string.capacitor_calculator_hint_uf),
             modifier = Modifier.padding(top = 12.dp),
             value = uf,
             reset = reset.value,
@@ -140,7 +140,7 @@ private fun CapacitorCodeValuesContent(
             onOptionSelected = { onValueChanged(it, CapacitorValue.UF) },
         )
         AppTextField(
-            label = stringResource(id = R.string.hint_nf),
+            label = stringResource(id = R.string.capacitor_calculator_hint_nf),
             modifier = Modifier.padding(top = 12.dp),
             value = nf,
             reset = reset.value,
@@ -149,7 +149,7 @@ private fun CapacitorCodeValuesContent(
             onOptionSelected = { onValueChanged(it, CapacitorValue.NF) },
         )
         AppTextField(
-            label = stringResource(id = R.string.hint_pf),
+            label = stringResource(id = R.string.capacitor_calculator_hint_pf),
             modifier = Modifier.padding(top = 12.dp),
             value = pf,
             reset = reset.value,

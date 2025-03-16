@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Capacitor Calculator</string>
+
     <!-- home screen -->
     <string name="home_calculators_header_text">Calculators</string>
     <string name="home_capacitors_header_text">Learn about capacitors</string>
@@ -26,15 +27,21 @@
     <string name="capacitor_calculator_code">Code</string>
     <string name="capacitor_calculator_tolerance">Tolerance</string>
     <string name="capacitor_calculator_voltage_rating">Voltage rating</string>
+    <string name="capacitor_calculator_hint_uf">Micro-farads (µF)</string>
+    <string name="capacitor_calculator_hint_nf">Nano-farads (nF)</string>
+    <string name="capacitor_calculator_hint_pf">Pico-farads (pF)</string>
     <string name="capacitor_calculator_headline_text">Learn about common codes</string>
     <string name="capacitor_calculator_button_text">Explore common codes</string>
 
     <!-- smd calculator screen -->
     <string name="smd_calculator_title">SMD Capacitor</string>
     <string name="smd_default_value">Enter code</string>
+    <string name="smd_units_hint">Units</string>
+    <string name="smd_code_hint">Code</string>
     <string name="smd_navbar_three_eia">Three Digit EIA</string>
     <string name="smd_navbar_four_eia">Four Digit EIA</string>
     <string name="smd_navbar_eia_198">EIA-198</string>
+    <string name="smd_capacitor_content_description">SMD capacitor</string>
 
     <!-- common codes info screen -->
     <string name="common_code_title">Common Codes</string>
@@ -93,11 +100,11 @@
     <string name="information_variable_subtext_5">Differential</string>
 
     <!-- capacitor types info details screens (all capacitors) -->
+    <string name="information_details_content_description">Capacitor image</string>
     <string name="information_details_general_information">General information</string>
     <string name="information_details_capacitance">Capacitance</string>
     <string name="information_details_characteristics">Characteristics</string>
     <string name="information_details_applications">Applications</string>
-
     <string name="ceramic_details_title">Ceramic Capacitor</string>
     <string name="ceramic_details_general_information_1">Ceramic capacitors are fixed-value capacitors that use a ceramic material as the dielectric. They are typically constructed of alternating layers of ceramic and metal electrodes. The specific ceramic composition determines the electrical behavior and best-fit applications.</string>
     <string name="ceramic_details_general_information_2">With production volumes exceeding one trillion pieces per year, ceramic capacitors are among the most widely manufactured and used capacitors in electronic equipment.</string>
@@ -105,7 +112,6 @@
     <string name="ceramic_details_applications_1">There are two standard classes of ceramic capacitors (Class I and Class II), each specialized for different needs.</string>
     <string name="ceramic_details_applications_2">Class I capacitors offer high stability and low losses, making them ideal for resonant circuit applications.</string>
     <string name="ceramic_details_applications_3">Class II capacitors provide high volumetric efficiency, well-suited for bypass, decoupling, and smoothing applications.</string>
-
     <string name="film_details_title">Film Capacitor</string>
     <string name="film_details_general_information">Film capacitors use a thin plastic film as the dielectric, often with a paper layer carrying the electrodes. Different film materials provide unique properties that influence their performance.</string>
     <string name="film_details_capacitance">Many film capacitors print key values, such as capacitance and voltage rating, directly on the case. If not, a three-digit code is typically used to indicate these parameters (e.g., 104 for 0.1 µF).</string>
@@ -130,7 +136,6 @@
     <!-- 7. Polycarbonate (PC) -->
     <string name="film_details_characteristics_7">Polycarbonate film capacitors exhibit low losses and stable electrical properties, changing by about ±80 ppm across their operating temperature range. However, film supply has been discontinued by major manufacturers.</string>
     <string name="film_details_applications_7">Historically, PC capacitors were used in precision timing, analog filters, and signal processing under demanding environmental conditions.</string>
-
     <string name="electrolytic_title">Electrolytic Capacitor</string>
     <string name="electrolytic_details_general_information"> Electrolytic capacitors are polarized because of their asymmetrical construction. The positive terminal (anode) must consistently be at a higher potential than the negative terminal (cathode), which is why polarity markings are included. Applying a reverse voltage or exceeding the rated voltage, even by just 1–1.5 volts, can critically damage the dielectric and lead to severe failure.</string>
     <string name="electrolytic_details_capacitance_1">"The capacitance value is typically printed on the capacitor's casing in microfarads (µF). This indicates how much electric charge it can store, as shown in the illustration above."</string>
@@ -139,18 +144,15 @@
     <string name="electrolytic_details_characteristics_2">Tantalum electrolytic capacitors are used where minimal space or a low profile is required. They offer stable performance across a broad temperature range, making them reliable for compact electronic devices.</string>
     <string name="electrolytic_details_characteristics_3">Niobium electrolytic capacitors compete with tantalum capacitors due to comparable properties and the more abundant availability of niobium, making it a viable alternative in many applications.</string>
     <string name="electrolytic_details_applications">Non-solid electrolytic capacitors appear in most consumer and industrial electronics. Military and space systems, however, often favor tantalum electrolytic capacitors because they meet stricter reliability standards.</string>
-
     <string name="super_title">Supercapacitor</string>
     <string name="super_details_general_information">Supercapacitors (also known as ultracapacitors) are high-capacity energy storage devices that bridge the gap between traditional electrolytic capacitors and rechargeable batteries. They can hold 10 to 100 times more energy per unit volume or mass than regular electrolytic capacitors, accept and deliver charge far more rapidly than batteries, and tolerate substantially more charge-discharge cycles.</string>
     <string name="super_details_capacitance">Most supercapacitors have their capacitance and voltage ratings clearly marked on the case. Their capacitance often falls in the farad (F) range—significantly higher than the microfarad or millifarad levels typically seen in electrolytic capacitors.</string>
     <string name="super_details_applications">These devices excel in applications demanding frequent and rapid charging or discharging. Common uses include regenerative braking in vehicles (cars, buses, trains), energy buffering in cranes and elevators, and burst-mode power delivery. Smaller supercapacitors can also serve as backup power for volatile memory, such as SRAM, in various electronic systems.</string>
-
     <string name="mica_title">Mica Capacitor</string>
     <string name="mica_details_general_information">Mica (or silver mica) capacitors are known for their precision, stability, and reliability. Typically offering smaller capacitance values, they excel at high frequencies where minimal losses and very low drift are critical.</string>
     <string name="mica_details_capacitance">Mica capacitors typically have their capacitance, tolerance, and voltage rating directly marked. They are used at 100 V to 10 kV, ranging from a few pF up to a few nF, and the average temperature coefficient is around 50 ppm/°C.</string>
     <string name="mica_details_characteristics">Key benefits include outstanding stability (due to the absence of capacitive air gaps), a sealed enclosure preventing corrosion of the plates, and efficient use of volume by allowing thinner conductive layers.</string>
     <string name="mica_details_applications">Engineers often select mica capacitors for high-power tasks like RF transmitters, electronic instruments, and amplifiers, where cheaper ceramics may fail under heat or high voltage. Silver mica is also widely preferred in high-voltage circuits thanks to its impressive breakdown voltage.</string>
-
     <string name="polymer_title">Polymer Capacitor</string>
     <string name="polymer_details_general_information_1">A polymer capacitor (or polymer electrolytic capacitor) uses a solid conductive polymer as the electrolyte. It is considered a type of electrolytic capacitor but with distinct advantages due to the polymer material.</string>
     <string name="polymer_details_general_information_2">These capacitors feature notably low equivalent series resistance (ESR) and high ripple current ratings. However, polymer electrolytic capacitors often have a higher leakage current compared to other solid or non-solid electrolytic types.</string>
@@ -159,7 +161,6 @@
     <string name="polymer_details_characteristics_2">Rectangular polymer aluminum chip capacitors employ layered anode foils connected in parallel, lowering ESR and ESL while supporting higher operating frequencies. This design provides a strong alternative to traditional tantalum capacitors.</string>
     <string name="polymer_details_characteristics_3">Hybrid polymer aluminum electrolytic capacitors offer substantially lower leakage current than standard polymer aluminum capacitors, making them suitable for applications requiring tighter leakage specifications.</string>
     <string name="polymer_details_applications">Polymer electrolytic capacitors are commonly used in power supplies for buffering, bypassing, and decoupling—especially in slim or compact devices. They compete with some ceramic capacitors but provide greater capacitance and avoid microphonic effects.</string>
-
     <string name="variable_title">Variable Capacitor</string>
     <string name="variable_details_general_information">A variable capacitor allows intentional, repeated changes to its capacitance, either mechanically or electronically. This is typically done by adjusting the plate overlap area or the distance between the plates.</string>
     <string name="variable_details_characteristics_1">"Trimmer capacitors are small variable capacitors adjusted with a screwdriver—often used to fine-tune a circuit's resonance at the factory. They may use air, plastic, or even solid dielectrics like mica."</string>
@@ -195,16 +196,6 @@
     <string name="smd_eia_198_base_capacitance_text_field_clear_label">Clear search</string>
     <string name="smd_eia_198_base_capacitance_no_results">No results found.</string>
 
-    <!-- OutlinedTextField hints -->
-    <string name="units_hint">Units</string>
-    <string name="hint_code">Code</string>
-    <string name="hint_uf">Micro-farads (µF)</string>
-    <string name="hint_nf">Nano-farads (nF)</string>
-    <string name="hint_pf">Pico-farads (pF)</string>
-    <!-- content descriptions -->
-    <string name="content_right_arrow">Right arrow</string>
-    <string name="content_description_capacitor">Capacitor image</string>
-    <string name="content_description_smd_capacitor">SMD capacitor</string>
     <!-- error messages -->
     <string name="error_invalid_code">Invalid code</string>
     <string name="error_invalid_capacitance">Invalid capacitance</string>

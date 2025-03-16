@@ -140,7 +140,7 @@ private fun SmdScreenContent(
     ) {
         SmdCapacitorLayout(capacitor, isError)
         AppTextField(
-            label = stringResource(id = R.string.hint_code),
+            label = stringResource(id = R.string.smd_code_hint),
             modifier = Modifier.padding(top = 32.dp),
             value = code,
             reset = reset.value,
@@ -157,7 +157,7 @@ private fun SmdScreenContent(
             onValueChanged(code.value, capacitor.units, false)
         }
         AppDropDownMenu(
-            label = stringResource(id = R.string.units_hint),
+            label = stringResource(id = R.string.smd_units_hint),
             modifier = Modifier.padding(top = 12.dp),
             selectedOption = capacitor.units,
             items = DropdownLists.UNITS,

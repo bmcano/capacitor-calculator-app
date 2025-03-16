@@ -35,7 +35,7 @@ fun SmdCapacitorLayout(capacitor: SmdCapacitor, isError: Boolean) {
         ) {
             Image(
                 painter = painterResource(id = R.drawable.img_smd_capacitor),
-                contentDescription = stringResource(id = R.string.content_description_smd_capacitor),
+                contentDescription = stringResource(id = R.string.smd_capacitor_content_description),
             )
             val text = if (isError) {
                 stringResource(id = R.string.error_na)
