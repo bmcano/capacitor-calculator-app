@@ -27,6 +27,7 @@
     <string name="capacitor_values_voltage_values">Voltage (V)</string>
     <!-- common codes screen -->
     <string name="common_code_title">Common Codes</string>
+    <string name="common_codes_body">Below are common capacitor codes and their respective values in pF, nF, and µF.</string>
     <string name="common_codes_code">Code</string>
     <string name="common_codes_pf">pF</string>
     <string name="common_codes_nf">nF</string>
@@ -160,7 +161,7 @@
     <string name="cap_four_code_body">The four-digit code is very similar to the three-digit code, with the addition of a 4th value which indicates the tolerance.</string>
     <string name="cap_four_digit_formula">xy \u00D7 10\u1dbb ±t%</string>
     <string name="cap_four_digit_example">22 \u00D7 10\u00b2 J  = 2200 pF ±5%</string>
-    <string name="cap_four_digit_note">"The letter 'R' indicates the position of the decimal point for resistance values lower than 10 \u03A9. For example, 0R5 would be 0.5 \u03A9 and 0R01 would be 0.01 \u03A9."</string>
+    <string name="cap_four_digit_note">"The letter 'R' indicates the position of the decimal point for capacitance values lower than 10 \u03A9. For example, 0R5 would be 0.5 \u03A9 and 0R01 would be 0.01 \u03A9."</string>
     <string name="cap_eia_198_headline">EIA-198 Code</string>
     <string name="cap_eia_198_body">The EIA-198 code uses a combination of letters and digits to encode capacitance values. The letter corresponds to the base capacitance value, and the digit is a multiplier.</string>
     <string name="cap_eia_198_formula">Base Capacitance (pF) \u00D7 10\u02B8</string>

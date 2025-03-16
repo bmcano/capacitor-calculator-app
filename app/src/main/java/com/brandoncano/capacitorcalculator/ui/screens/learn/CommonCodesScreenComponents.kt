@@ -29,20 +29,18 @@ fun ChartRowLabels() {
         stringResource(id = R.string.common_codes_nf),
         stringResource(id = R.string.common_codes_uf),
     )
-    AppCard {
-        Row(
-            modifier = Modifier
-                .padding(vertical = 12.dp)
-                .fillMaxWidth(),
-        ) {
-            labels.forEach {
-                Text(
-                    text = it,
-                    modifier = Modifier.weight(1f),
-                    style = textStyleHeadline(),
-                    textAlign = TextAlign.Center,
-                )
-            }
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 8.dp)
+    ) {
+        labels.forEach {
+            Text(
+                text = it,
+                modifier = Modifier.weight(1f),
+                style = textStyleHeadline(),
+                textAlign = TextAlign.Center,
+            )
         }
     }
 }
@@ -51,14 +49,12 @@ fun ChartRowLabels() {
 @Composable
 fun ChartTable() {
     val codes = CapacitorCodeConversions.entries
-    AppCard {
-        LazyColumn {
-            itemsIndexed(codes) { index, code ->
-                ChartTableRow(code)
-                // This check is to replicate the divider logic
-                if (codes.size - 1 != index) {
-                    AppDivider(modifier = Modifier.padding(horizontal = 16.dp))
-                }
+    LazyColumn {
+        itemsIndexed(codes) { index, code ->
+            ChartTableRow(code)
+            // This check is to replicate the divider logic
+            if (codes.size - 1 != index) {
+                AppDivider(modifier = Modifier.padding(horizontal = 0.dp))
             }
         }
     }
