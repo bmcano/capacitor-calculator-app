@@ -37,7 +37,7 @@ fun CapacitanceText(
         capacitance = stringResource(id = R.string.error_na)
     } else {
         capacitance = if (capacitor.isEmpty()) {
-            stringResource(id = R.string.default_code)
+            stringResource(id = R.string.capacitor_calculator_default_code)
         } else {
             capacitor.formatCapacitance()
         }

@@ -21,12 +21,20 @@
 
     <!-- capacitor calculator screens -->
     <string name="capacitor_calculator_title">Capacitor Calculator</string>
+    <string name="capacitor_calculator_default_code">Enter code</string>
     <string name="capacitor_calculator_units">Units</string>
     <string name="capacitor_calculator_code">Code</string>
     <string name="capacitor_calculator_tolerance">Tolerance</string>
     <string name="capacitor_calculator_voltage_rating">Voltage rating</string>
     <string name="capacitor_calculator_headline_text">Learn about common codes</string>
     <string name="capacitor_calculator_button_text">Explore common codes</string>
+
+    <!-- smd calculator screen -->
+    <string name="smd_calculator_title">SMD Capacitor</string>
+    <string name="smd_default_value">Enter code</string>
+    <string name="smd_navbar_three_eia">Three Digit EIA</string>
+    <string name="smd_navbar_four_eia">Four Digit EIA</string>
+    <string name="smd_navbar_eia_198">EIA-198</string>
 
     <!-- common codes info screen -->
     <string name="common_code_title">Common Codes</string>
@@ -52,7 +60,7 @@
     <string name="capacitor_values_voltage_code">Code</string>
     <string name="capacitor_values_voltage_values">Voltage (V)</string>
 
-    <!-- information screen -->
+    <!-- capacitor types info screen -->
     <string name="information_title">Capacitor Types</string>
     <string name="information_body_text">Capacitors come in many shapes and sizes, each with slight variations on which markings they have. For the most part if the capacitance is not directly marked, a three digit code determines the capacitance.</string>
     <string name="information_header_text">Tap a capacitor type to learn more about its characteristics, applications, and advantages.</string>
@@ -83,7 +91,8 @@
     <string name="information_variable_subtext_3">Butterfly capacitor</string>
     <string name="information_variable_subtext_4">Split stator variable capacitor</string>
     <string name="information_variable_subtext_5">Differential variable capacitor</string>
-    <!-- information details screen (all capacitors) -->
+
+    <!-- capacitor types info details screens (all capacitors) -->
     <string name="information_details_general_information">General information</string>
     <string name="information_details_capacitance">Capacitance</string>
     <string name="information_details_characteristics">Characteristics</string>
@@ -186,25 +195,16 @@
     <string name="smd_eia_198_base_capacitance_text_field_clear_label">Clear search</string>
     <string name="smd_eia_198_base_capacitance_no_results">No results found.</string>
 
-    <!-- smd calculator screen -->
-    <string name="smd_calculator_title">SMD Capacitor</string>
     <!-- OutlinedTextField hints -->
     <string name="units_hint">Units</string>
     <string name="hint_code">Code</string>
     <string name="hint_uf">Micro-farads (µF)</string>
     <string name="hint_nf">Nano-farads (nF)</string>
     <string name="hint_pf">Pico-farads (pF)</string>
-    <!-- navbar items -->
-    <string name="navbar_three_eia">Three Digit EIA</string>
-    <string name="navbar_four_eia">Four Digit EIA</string>
-    <string name="navbar_eia_198">EIA-198</string>
     <!-- content descriptions -->
     <string name="content_right_arrow">Right arrow</string>
     <string name="content_description_capacitor">Capacitor image</string>
     <string name="content_description_smd_capacitor">SMD capacitor</string>
-    <!-- default values -->
-    <string name="default_code">Enter code</string>
-    <string name="default_smd_value">Enter code</string>
     <!-- error messages -->
     <string name="error_invalid_code">Invalid code</string>
     <string name="error_invalid_capacitance">Invalid capacitance</string>

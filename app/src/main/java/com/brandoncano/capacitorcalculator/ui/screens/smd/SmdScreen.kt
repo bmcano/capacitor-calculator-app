@@ -92,15 +92,15 @@ fun SmdScreen(
                 },
                 options = listOf(
                     NavigationBarOptions(
-                        label = stringResource(id = R.string.navbar_three_eia),
+                        label = stringResource(id = R.string.smd_navbar_three_eia),
                         imageVector = Icons.Outlined.Looks3,
                     ),
                     NavigationBarOptions(
-                        label = stringResource(id = R.string.navbar_four_eia),
+                        label = stringResource(id = R.string.smd_navbar_four_eia),
                         imageVector = Icons.Outlined.Looks4,
                     ),
                     NavigationBarOptions(
-                        label = stringResource(id = R.string.navbar_eia_198),
+                        label = stringResource(id = R.string.smd_navbar_eia_198),
                         imageVector = Icons.Outlined.Explicit,
                     ),
                 ),

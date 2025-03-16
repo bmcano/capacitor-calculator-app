@@ -48,7 +48,7 @@ fun SmdCapacitorLayout(capacitor: SmdCapacitor, isError: Boolean) {
             )
         }
         val text = when {
-            capacitor.isEmpty() -> stringResource(id = R.string.default_smd_value)
+            capacitor.isEmpty() -> stringResource(id = R.string.smd_default_value)
             isError -> stringResource(id = R.string.error_na)
             else -> capacitor.formatCapacitance()
         }
