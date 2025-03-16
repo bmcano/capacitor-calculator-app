@@ -16,6 +16,7 @@ import com.brandoncano.capacitorcalculator.model.CapacitorViewModelFactory
 import com.brandoncano.capacitorcalculator.model.smd.SmdCapacitorViewModel
 import com.brandoncano.capacitorcalculator.navigation.Screen
 import com.brandoncano.capacitorcalculator.navigation.navigateToAbout
+import com.brandoncano.capacitorcalculator.navigation.navigateToSmdCodeSystems
 import com.brandoncano.capacitorcalculator.ui.screens.smd.SmdScreen
 
 fun NavGraphBuilder.smdScreen(
@@ -59,7 +60,7 @@ fun NavGraphBuilder.smdScreen(
                 viewModel.saveNavBarSelection(selection)
             },
             navBarPosition = viewModel.getNavBarSelection(),
-//            onLearnSmdCodesTapped = { navigateToSmdCodeIec(navHostController) },
+            onLearnSmdCodesTapped = { navigateToSmdCodeSystems(navHostController) },
         )
     }
 }

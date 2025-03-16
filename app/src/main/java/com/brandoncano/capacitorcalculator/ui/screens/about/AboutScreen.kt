@@ -122,11 +122,6 @@ private fun AboutScreenContent(
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
                 style = textStyleBody().onSurfaceVariant(),
             )
-            Text(
-                text = stringResource(id = R.string.about_description_part_03),
-                modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
-                style = textStyleBody().onSurfaceVariant(),
-            )
         }
         Spacer(modifier = Modifier.height(32.dp))
         CapacitorInformationButtons(

@@ -15,9 +15,8 @@
     <!-- about screen -->
     <string name="about_title">About The App</string>
     <string name="about_description">Description</string>
-    <string name="about_description_part_01">In this app you can calculate the capacitance of a capacitor by entering a three-digit (XYZ) code or by entering in a capacitance value to get a code.</string>
-    <string name="about_description_part_02">Additionally, you can calculate the capacitance of a SMD capacitor by any of the three available standards.</string>
-    <string name="about_description_part_03">We also include a information page with details, characteristics, and applications of various types of capacitors.</string>
+    <string name="about_description_part_01">Use this app to quickly calculate capacitor values from standard three-digit (XYZ) or SMD codes, or convert a known capacitance into its corresponding code.</string>
+    <string name="about_description_part_02">In addition, explore our detailed reference pages covering various capacitor types, their characteristics, and practical applications—all in one convenient place.</string>
     <string name="about_view_privacy_policy">View privacy policy</string>
 
     <!-- capacitor calculator screens -->
@@ -42,6 +41,8 @@
     <string name="smd_navbar_four_eia">Four Digit EIA</string>
     <string name="smd_navbar_eia_198">EIA-198</string>
     <string name="smd_capacitor_content_description">SMD capacitor</string>
+    <string name="smd_learn_code_headline">Learn about SMD codes</string>
+    <string name="smd_learn_code_card">Explore the IEC 60062 standard</string>
 
     <!-- common codes info screen -->
     <string name="common_code_title">Common Codes</string>

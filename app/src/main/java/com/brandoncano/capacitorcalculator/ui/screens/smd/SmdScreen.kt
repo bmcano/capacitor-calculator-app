@@ -15,9 +15,11 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.outlined.Explicit
+import androidx.compose.material.icons.outlined.Lightbulb
 import androidx.compose.material.icons.outlined.Looks3
 import androidx.compose.material.icons.outlined.Looks4
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
@@ -39,6 +41,8 @@ import com.brandoncano.capacitorcalculator.constants.Links
 import com.brandoncano.capacitorcalculator.model.smd.SmdCapacitor
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
 import com.brandoncano.sharedcomponents.composables.AboutAppMenuItem
+import com.brandoncano.sharedcomponents.composables.AppArrowCardButton
+import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.composables.AppDropDownMenu
 import com.brandoncano.sharedcomponents.composables.AppMenuTopAppBar
 import com.brandoncano.sharedcomponents.composables.AppNavigationBar
@@ -47,7 +51,9 @@ import com.brandoncano.sharedcomponents.composables.AppTextField
 import com.brandoncano.sharedcomponents.composables.ClearSelectionsMenuItem
 import com.brandoncano.sharedcomponents.composables.FeedbackMenuItem
 import com.brandoncano.sharedcomponents.composables.ShareTextMenuItem
+import com.brandoncano.sharedcomponents.data.ArrowCardButtonContents
 import com.brandoncano.sharedcomponents.data.NavigationBarOptions
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
 import java.util.Locale
 
 @Composable
@@ -62,6 +68,7 @@ fun SmdScreen(
     onValueChanged: (String, String, Boolean) -> Unit,
     onNavBarSelectionChanged: (Int) -> Unit,
     navBarPosition: Int,
+    onLearnSmdCodesTapped: () -> Unit,
 ) {
     var navBarSelection by remember { mutableIntStateOf(navBarPosition) }
     Scaffold(
@@ -116,6 +123,7 @@ fun SmdScreen(
             capacitor = capacitor,
             isError = isError,
             onValueChanged = onValueChanged,
+            onLearnSmdCodesTapped = onLearnSmdCodesTapped,
         )
     }
 }
@@ -127,6 +135,7 @@ private fun SmdScreenContent(
     capacitor: SmdCapacitor,
     isError: Boolean,
     onValueChanged: (String, String, Boolean) -> Unit,
+    onLearnSmdCodesTapped: () -> Unit,
 ) {
     val code = remember { mutableStateOf(capacitor.code) }
     val sidePadding = dimensionResource(R.dimen.app_side_padding)
@@ -164,6 +173,22 @@ private fun SmdScreenContent(
             reset = reset.value,
             onOptionSelected = { onValueChanged(code.value, it, true) }
         )
+
+        AppDivider(modifier = Modifier.padding(vertical = 24.dp))
+        Column(horizontalAlignment = Alignment.Start) {
+            Text(
+                text = stringResource(id = R.string.smd_learn_code_headline),
+                modifier = Modifier.padding(bottom = 16.dp),
+                style = textStyleHeadline(),
+            )
+            AppArrowCardButton(
+                ArrowCardButtonContents(
+                    imageVector = Icons.Outlined.Lightbulb,
+                    text = stringResource(id = R.string.smd_learn_code_card),
+                    onClick = onLearnSmdCodesTapped,
+                )
+            )
+        }
         Spacer(modifier = Modifier.height(24.dp))
     }
 }
@@ -183,6 +208,7 @@ private fun SmdScreenPreview() {
             onValueChanged = { _, _, _-> },
             onNavBarSelectionChanged = { _ -> },
             navBarPosition = 1,
+            onLearnSmdCodesTapped = {},
         )
     }
 }
