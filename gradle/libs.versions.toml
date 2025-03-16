@@ -16,7 +16,7 @@ ostermiller = "1.07.00" # 7/21/24
 pager = "0.34.0" # 7/18/24
 ui-test-junit4 = "1.7.8" # 3/16/25
 # gradle/language
-agp = "8.8.2" # 3/16/25
+agp = "8.9.0" # 3/16/25
 kotlin = "2.0.0" # 7/7/24
 ktlint = "11.3.1" # 7/10/24
 
