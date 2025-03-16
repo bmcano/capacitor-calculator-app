@@ -44,6 +44,7 @@ fun CommonCodesScreen(
                 onNavigateBack = onNavigateBack,
             )
         },
+        // Note: we don't use WindowInsets.safeDrawing since this is a special scrolling screen
         contentWindowInsets = WindowInsets(bottom = 0.dp)
     ) { paddingValues ->
         CommonCodesScreenContent(paddingValues)
