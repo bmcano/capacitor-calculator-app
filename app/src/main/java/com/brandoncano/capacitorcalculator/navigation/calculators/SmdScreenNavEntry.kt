@@ -31,13 +31,13 @@ fun NavGraphBuilder.smdScreen(
         val openMenu = remember { mutableStateOf(false) }
         val reset = remember { mutableStateOf(false) }
         val viewModel: SmdCapacitorViewModel = viewModel(factory = CapacitorViewModelFactory(context))
-        val resistor by viewModel.capacitor.collectAsState()
+        val capacitor by viewModel.capacitor.collectAsState()
         val isError by viewModel.isError.collectAsState()
 
         SmdScreen(
             openMenu = openMenu,
             reset = reset,
-            capacitor = resistor,
+            capacitor = capacitor,
             isError = isError,
             onNavigateBack = { navHostController.popBackStack() },
             onClearSelectionsTapped = {
