@@ -1,37 +1,5 @@
 <resources>
     <string name="app_name">Capacitor Calculator</string>
-    <!-- about screen -->
-    <string name="about_title">About The App</string>
-    <string name="about_description">Description</string>
-    <string name="about_description_part_01">In this app you can calculate the capacitance of a capacitor by entering a three-digit (XYZ) code or by entering in a capacitance value to get a code.</string>
-    <string name="about_description_part_02">Additionally, you can calculate the capacitance of a SMD capacitor by any of the three available standards.</string>
-    <string name="about_description_part_03">We also include a information page with details, characteristics, and applications of various types of capacitors.</string>
-    <string name="about_view_privacy_policy">View privacy policy</string>
-    <!-- capacitor calculator screens -->
-    <string name="capacitor_calculator_title">Capacitor Calculator</string>
-    <string name="capacitor_calculator_units">Units</string>
-    <string name="capacitor_calculator_code">Code</string>
-    <string name="capacitor_calculator_tolerance">Tolerance</string>
-    <string name="capacitor_calculator_voltage_rating">Voltage rating</string>
-    <string name="capacitor_calculator_headline_text">Learn about common codes</string>
-    <string name="capacitor_calculator_button_text">Explore common codes</string>
-    <!-- capacitor values screen -->
-    <string name="capacitor_values_title">Capacitor Values</string>
-    <string name="capacitor_values_capacitance_header">Capacitance</string>
-    <string name="capacitor_values_capacitance_body">Smaller capacitors use a shorthand notation, to display all the relevant information in the limited space. The most commonly used format is: XYZ T VOLTS V, where XYZ represents the capacitance, calculated as XY * 10\u1dbb pF. The letters T indicate the tolerance (see table below) and VOLTS V represents the voltage rating (see table below).</string>
-    <string name="capacitor_values_tolerance_header">Tolerance</string>
-    <string name="capacitor_values_tolerance_letter">Letter</string>
-    <string name="capacitor_values_tolerance_percentage">Tolerance (%)</string>
-    <string name="capacitor_values_voltage_header">Voltage Rating</string>
-    <string name="capacitor_values_voltage_code">Code</string>
-    <string name="capacitor_values_voltage_values">Voltage (V)</string>
-    <!-- common codes screen -->
-    <string name="common_code_title">Common Codes</string>
-    <string name="common_codes_body">Below are common capacitor codes and their respective values in pF, nF, and µF.</string>
-    <string name="common_codes_code">Code</string>
-    <string name="common_codes_pf">pF</string>
-    <string name="common_codes_nf">nF</string>
-    <string name="common_codes_uf">µF</string>
     <!-- home screen -->
     <string name="home_calculators_header_text">Calculators</string>
     <string name="home_capacitors_header_text">Learn about capacitors</string>
@@ -42,6 +10,48 @@
     <string name="home_capacitor_values">Capacitor values</string>
     <string name="home_information_button">Capacitor types</string>
     <string name="home_smd_codes_button">SMD code systems</string>
+
+    <!-- about screen -->
+    <string name="about_title">About The App</string>
+    <string name="about_description">Description</string>
+    <string name="about_description_part_01">In this app you can calculate the capacitance of a capacitor by entering a three-digit (XYZ) code or by entering in a capacitance value to get a code.</string>
+    <string name="about_description_part_02">Additionally, you can calculate the capacitance of a SMD capacitor by any of the three available standards.</string>
+    <string name="about_description_part_03">We also include a information page with details, characteristics, and applications of various types of capacitors.</string>
+    <string name="about_view_privacy_policy">View privacy policy</string>
+
+    <!-- capacitor calculator screens -->
+    <string name="capacitor_calculator_title">Capacitor Calculator</string>
+    <string name="capacitor_calculator_units">Units</string>
+    <string name="capacitor_calculator_code">Code</string>
+    <string name="capacitor_calculator_tolerance">Tolerance</string>
+    <string name="capacitor_calculator_voltage_rating">Voltage rating</string>
+    <string name="capacitor_calculator_headline_text">Learn about common codes</string>
+    <string name="capacitor_calculator_button_text">Explore common codes</string>
+
+    <!-- common codes info screen -->
+    <string name="common_code_title">Common Codes</string>
+    <string name="common_codes_body">Below are common capacitor codes and their respective values in pF, nF, and µF.</string>
+    <string name="common_codes_code">Code</string>
+    <string name="common_codes_pf">pF</string>
+    <string name="common_codes_nf">nF</string>
+    <string name="common_codes_uf">µF</string>
+
+    <!-- capacitor values info screen -->
+    <string name="capacitor_values_title">Capacitor Values</string>
+    <string name="capacitor_values_capacitance_header">Capacitance</string>
+    <string name="capacitor_values_capacitance_subhead">Smaller capacitors often use a shorthand code to fit all the important details onto the component. The most common format is XYZ T VOLTS, where:</string>
+    <string name="capacitor_values_capacitance_bullet_1">XYZ represents the capacitance, read as XY * 10\u1dbb, typically in pico-farads</string>
+    <string name="capacitor_values_capacitance_bullet_2">"T is a letter indicating the capacitor's tolerance"</string>
+    <string name="capacitor_values_capacitance_bullet_3">"VOLTS shows the capacitor's maximum rated voltage"</string>
+    <string name="capacitor_values_tolerance_header">Tolerance</string>
+    <string name="capacitor_values_tolerance_subhead">"Tolerance indicates how much the actual capacitance may vary from the labeled value, usually shown as a percentage (e.g., ±10%). A lower tolerance means the capacitor's value is closer to its stated rating."</string>
+    <string name="capacitor_values_tolerance_letter">Tolerance</string>
+    <string name="capacitor_values_tolerance_percentage">Tolerance (%)</string>
+    <string name="capacitor_values_voltage_header">Voltage Rating</string>
+    <string name="capacitor_values_voltage_subhead">Voltage Rating is the maximum voltage the capacitor can safely handle. Exceeding this rating risks damaging the capacitor or causing it to fail.</string>
+    <string name="capacitor_values_voltage_code">Code</string>
+    <string name="capacitor_values_voltage_values">Voltage (V)</string>
+
     <!-- information screen -->
     <string name="information_title">Capacitor Types</string>
     <string name="information_body_text">Capacitors come in many shapes and sizes, each with slight variations on which markings they have. For the most part if the capacitance is not directly marked, a three digit code determines the capacitance.</string>
