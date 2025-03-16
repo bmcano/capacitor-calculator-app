@@ -181,12 +181,10 @@
     <string name="smd_eia_198_example_label">For example, a capacitor labeled B2 equates to:</string>
     <string name="smd_eia_198_example">1.1 pF \u00D7 10\u00b2 = 110 pF</string>
     <string name="smd_eia_198_base_capacitance_title">Base Capacitance</string>
-    <string name="smd_eia_198_base_capacitance_body">Below is a reference table for letters and their corresponding base capacitance values. Use the search box to quickly find a specific entry:</string>
+    <string name="smd_eia_198_base_capacitance_body">Below is a reference table for letters and their corresponding base capacitance values. Use the search box to quickly find a specific entry.</string>
     <string name="smd_eia_198_base_capacitance_text_field">Search by letter or value</string>
     <string name="smd_eia_198_base_capacitance_text_field_clear_label">Clear search</string>
     <string name="smd_eia_198_base_capacitance_no_results">No results found.</string>
-    <string name="smd_eia_198_base_capacitance_col1">Letter</string>
-    <string name="smd_eia_198_base_capacitance_col2">Capacitance</string>
 
     <!-- smd calculator screen -->
     <string name="smd_calculator_title">SMD Capacitor</string>
