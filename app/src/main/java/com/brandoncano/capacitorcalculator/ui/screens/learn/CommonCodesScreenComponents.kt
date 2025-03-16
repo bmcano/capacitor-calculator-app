@@ -14,7 +14,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.data.CapacitorCodeConversions
-import com.brandoncano.sharedcomponents.composables.AppCard
 import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
 import com.brandoncano.sharedcomponents.text.textStyleHeadline
@@ -52,7 +51,6 @@ fun ChartTable() {
     LazyColumn {
         itemsIndexed(codes) { index, code ->
             ChartTableRow(code)
-            // This check is to replicate the divider logic
             if (codes.size - 1 != index) {
                 AppDivider(modifier = Modifier.padding(horizontal = 0.dp))
             }
