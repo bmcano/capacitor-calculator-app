@@ -2,13 +2,15 @@ package com.brandoncano.capacitorcalculator.ui.screens.learndetails
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -38,10 +40,11 @@ fun InformationDetailsScreen(
         topBar = {
             AppTopAppBar(
                 titleText = stringResource(stringResource),
-                navigationIcon =  Icons.Filled.Close,
+                navigationIcon =  Icons.AutoMirrored.Filled.ArrowBack,
                 onNavigateBack = onNavigateBack,
             )
         },
+        contentWindowInsets = WindowInsets.safeDrawing,
     ) { paddingValues ->
         val sidePadding = dimensionResource(R.dimen.app_side_padding)
         Column(
