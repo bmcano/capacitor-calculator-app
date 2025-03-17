@@ -17,15 +17,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.brandoncano.capacitorcalculator.R
+import com.brandoncano.capacitorcalculator.ui.composables.AppBulletList
 import com.brandoncano.sharedcomponents.composables.AppDivider
-import com.brandoncano.sharedcomponents.text.onSurfaceVariant
 import com.brandoncano.sharedcomponents.text.textStyleCallout
-import com.brandoncano.sharedcomponents.text.textStyleSubhead
 
 @Composable
 fun ArrowCardButtonWithSubText(
@@ -73,13 +70,12 @@ private fun CapacitorTypeListItem(
                 overflow = TextOverflow.Ellipsis,
                 maxLines = 1,
             )
-            subText.forEachIndexed { index, it ->
-                val bottomDp = if (subText.size - 1 == index) 16.dp else 0.dp
-                Text(
-                    text = " • $it",
-                    modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = bottomDp),
-                    style = textStyleSubhead().onSurfaceVariant(),
-                    overflow = TextOverflow.Ellipsis,
+            if (subText.isNotEmpty()) {
+                AppBulletList(
+                    items = subText,
+                    modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
+                    verticalSpacing = 0.dp,
+                    ellipse = true,
                     maxLines = 1,
                 )
             }
@@ -87,7 +83,7 @@ private fun CapacitorTypeListItem(
         Image(
             modifier = Modifier.padding(16.dp),
             imageVector = Icons.AutoMirrored.Filled.ArrowForwardIos,
-            contentDescription = stringResource(id = R.string.content_right_arrow),
+            contentDescription = null,
             colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onSurfaceVariant),
         )
     }

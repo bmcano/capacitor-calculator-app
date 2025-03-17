@@ -21,8 +21,8 @@ class CapacitorAdvancedViewModel(context: Context) : ViewModel() {
 
     init {
         viewModelScope.launch {
-            val loadedResistor = repository.loadCapacitor()
-            _capacitor.value = loadedResistor
+            val loadedCapacitor = repository.loadCapacitor()
+            _capacitor.value = loadedCapacitor
             updateErrorState()
         }
     }

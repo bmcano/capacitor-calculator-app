@@ -21,8 +21,8 @@ class SmdCapacitorViewModel(context: Context): ViewModel() {
 
     init {
         viewModelScope.launch {
-            val loadedResistor = repository.loadCapacitor()
-            _capacitor.value = loadedResistor
+            val loadedCapacitor = repository.loadCapacitor()
+            _capacitor.value = loadedCapacitor
             updateErrorState()
         }
     }
@@ -38,7 +38,7 @@ class SmdCapacitorViewModel(context: Context): ViewModel() {
         updateErrorState()
         if (!_isError.value) {
             _capacitor.value.formatCapacitance()
-            saveResistorValues()
+            saveCapacitorValues()
         }
     }
 
@@ -52,12 +52,12 @@ class SmdCapacitorViewModel(context: Context): ViewModel() {
         updateErrorState()
         if (!_isError.value) {
             _capacitor.value.formatCapacitance()
-            saveResistorValues()
+            saveCapacitorValues()
         }
         repository.saveNavBarSelection(navBarSelection)
     }
 
-    private fun saveResistorValues() {
+    private fun saveCapacitorValues() {
         repository.saveCapacitor(_capacitor.value)
     }
 

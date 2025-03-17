@@ -4,9 +4,11 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -74,7 +76,8 @@ fun CapacitorCodeValuesScreen(
                 )
                 AboutAppMenuItem(onAboutTapped)
             }
-        }
+        },
+        contentWindowInsets = WindowInsets.safeDrawing,
     ) { paddingValues ->
         CapacitorCodeValuesContent(
             paddingValues = paddingValues,
@@ -128,7 +131,7 @@ private fun CapacitorCodeValuesContent(
             onOptionSelected = { onValueChanged(it, CapacitorValue.Code) },
         )
         AppTextField(
-            label = stringResource(id = R.string.hint_uf),
+            label = stringResource(id = R.string.capacitor_calculator_hint_uf),
             modifier = Modifier.padding(top = 12.dp),
             value = uf,
             reset = reset.value,
@@ -137,7 +140,7 @@ private fun CapacitorCodeValuesContent(
             onOptionSelected = { onValueChanged(it, CapacitorValue.UF) },
         )
         AppTextField(
-            label = stringResource(id = R.string.hint_nf),
+            label = stringResource(id = R.string.capacitor_calculator_hint_nf),
             modifier = Modifier.padding(top = 12.dp),
             value = nf,
             reset = reset.value,
@@ -146,7 +149,7 @@ private fun CapacitorCodeValuesContent(
             onOptionSelected = { onValueChanged(it, CapacitorValue.NF) },
         )
         AppTextField(
-            label = stringResource(id = R.string.hint_pf),
+            label = stringResource(id = R.string.capacitor_calculator_hint_pf),
             modifier = Modifier.padding(top = 12.dp),
             value = pf,
             reset = reset.value,

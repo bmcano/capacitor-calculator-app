@@ -32,7 +32,7 @@ fun CapacitorImage(
     ) {
         Image(
             painter = painterResource(id = imgRes),
-            contentDescription = stringResource(id = R.string.content_description_capacitor),
+            contentDescription = stringResource(id = R.string.information_details_content_description),
             modifier = Modifier.size(128.dp),
         )
     }

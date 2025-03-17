@@ -3,9 +3,11 @@ package com.brandoncano.capacitorcalculator.ui.screens.learn
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -18,7 +20,9 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
+import com.brandoncano.capacitorcalculator.ui.composables.AppBulletList
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
+import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
@@ -37,6 +41,7 @@ fun CapacitorValuesScreen(
                 onNavigateBack = onNavigateBack,
             )
         },
+        contentWindowInsets = WindowInsets.safeDrawing,
     ) { paddingValues ->
         CapacitorValuesScreenContent(paddingValues)
     }
@@ -58,13 +63,40 @@ private fun CapacitorValuesScreenContent(paddingValues: PaddingValues) {
             style = textStyleTitle()
         )
         Text(
-            text = stringResource(id = R.string.capacitor_values_capacitance_body),
-            modifier = Modifier.padding(top = 12.dp),
+            text = stringResource(id = R.string.capacitor_values_capacitance_subhead),
+            modifier = Modifier.padding(top = 12.dp, bottom = 8.dp),
             style = textStyleSubhead().onSurfaceVariant()
         )
-        Spacer(modifier = Modifier.height(32.dp))
+        AppBulletList(
+            items = listOf(
+                stringResource(id = R.string.capacitor_values_capacitance_bullet_1),
+                stringResource(id = R.string.capacitor_values_capacitance_bullet_2),
+                stringResource(id = R.string.capacitor_values_capacitance_bullet_3),
+            )
+        )
+        AppDivider(modifier = Modifier.padding(vertical = 16.dp))
+
+        Text(
+            text = stringResource(id = R.string.capacitor_values_tolerance_header),
+            style = textStyleTitle()
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        Text(
+            text = stringResource(id = R.string.capacitor_values_tolerance_subhead),
+            style = textStyleSubhead().onSurfaceVariant(),
+        )
         ToleranceTable()
         Spacer(modifier = Modifier.height(32.dp))
+
+        Text(
+            text = stringResource(id = R.string.capacitor_values_voltage_header),
+            style = textStyleTitle()
+        )
+        Spacer(modifier = Modifier.height(12.dp))
+        Text(
+            text = stringResource(id = R.string.capacitor_values_voltage_subhead),
+            style = textStyleSubhead().onSurfaceVariant(),
+        )
         VoltageRatingTable()
         Spacer(modifier = Modifier.height(48.dp))
     }

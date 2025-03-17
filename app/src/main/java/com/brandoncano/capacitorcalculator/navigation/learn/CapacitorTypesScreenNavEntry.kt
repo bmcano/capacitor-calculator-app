@@ -1,5 +1,6 @@
 package com.brandoncano.capacitorcalculator.navigation.learn
 
+import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.navigation.NavGraphBuilder
@@ -15,7 +16,8 @@ fun NavGraphBuilder.learnCapacitorTypes(
     composable(
         route = Screen.CapacitorTypes.route,
         enterTransition = { slideInVertically(initialOffsetY = { it }) },
-        exitTransition = { slideOutVertically(targetOffsetY = { it }) },
+        popEnterTransition = { slideInHorizontally() },
+        popExitTransition = { slideOutVertically(targetOffsetY = { it }) },
     ) {
         CapacitorTypesScreen(
             onNavigateBack = { navHostController.popBackStack() },

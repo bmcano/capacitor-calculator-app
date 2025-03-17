@@ -4,7 +4,7 @@
 
 ### About
 
-This app, developed by Brandon Cano, is designed to be a valuable tool for anyone working with resistors.
+This app, developed by Brandon Cano, is designed to be a valuable tool for anyone working with capacitors.
 
 For inquiries, please contact me at: brandoncano.development@gmail.com
 

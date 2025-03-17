@@ -3,9 +3,11 @@ package com.brandoncano.capacitorcalculator.ui.screens.about
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -53,7 +55,8 @@ fun AboutScreen(
                 navigationIcon = Icons.Filled.Close,
                 onNavigateBack = onNavigateBack,
             )
-        }
+        },
+        contentWindowInsets = WindowInsets.safeDrawing,
     ) { paddingValues ->
         AboutScreenContent(
             paddingValues = paddingValues,
@@ -116,11 +119,6 @@ private fun AboutScreenContent(
             )
             Text(
                 text = stringResource(id = R.string.about_description_part_02),
-                modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
-                style = textStyleBody().onSurfaceVariant(),
-            )
-            Text(
-                text = stringResource(id = R.string.about_description_part_03),
                 modifier = Modifier.padding(start = 16.dp, end = 16.dp, bottom = 16.dp),
                 style = textStyleBody().onSurfaceVariant(),
             )

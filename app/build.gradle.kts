@@ -13,8 +13,8 @@ android {
         applicationId = "com.brandoncano.capacitorcalculator"
         minSdk = 24
         targetSdk = 35
-        versionCode = 11 // for 2.2.0
-        versionName = "2.2.0"
+        versionCode = 12 // for 2.3.0
+        versionName = "2.3.0"
 
         vectorDrawables {
             useSupportLibrary = true
@@ -23,7 +23,7 @@ android {
     applicationVariants.configureEach {
         val suffix = if (buildType.name == "debug") ", DEBUG" else ""
         resValue("string", "version", "$versionName$suffix")
-        resValue("string", "last_updated", "1/15/2025")
+        resValue("string", "last_updated", "3/16/2025")
     }
     buildTypes {
         release {
@@ -71,8 +71,6 @@ dependencies {
     implementation(libs.androidx.compose.material3)
     // com.google
     implementation(libs.gson)
-    implementation(libs.accompanist.pager)
-    implementation(libs.accompanist.pager.indicators)
     // unit testing
     testImplementation(libs.junit)
     // external libraries

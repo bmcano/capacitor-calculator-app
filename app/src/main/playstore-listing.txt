@@ -12,12 +12,12 @@ Full description: (1519/4000)
 Quickly and accurately calculate capacitor values with our intuitive app, perfect for electronics hobbyists, students, and professionals.
 
 <b>Key Features:</b>
-• Code-to-Value Calculator - Quickly calculate resistance values by selecting resistor color bands. Perfect for resistor color-code lookups in electronics projects.
-• Value-to-Code Calculator - Enter a resistance value, tolerance, and temperature coefficient (if applicable) to view the matching color code bands in real-time.
-• SMD Capacitor Code Calculator - Easily convert SMD (Surface-Mount Device) codes to standard Ohm values. Supports 3-digit EIA, 4-digit EIA, and EIA-96 coding standards.
+• Code-to-Value Calculator - Quickly calculate capacitance values by entering a capacitor code.
+• Value-to-Code Calculator - Enter a capacitance value, tolerance, or voltage rating to view the meaning of their values in real-time.
+• SMD Capacitor Code Calculator - Easily convert SMD (Surface-Mount Device) codes to standard Ohm values. Supports 3-digit EIA, 4-digit EIA, and EIA-198 coding standards.
 
 <b>Additional Functionalities:</b>
-• Share Your Resistor Values - Share calculated resistor details by text for easy project collaboration.
+• Share Your Capacitor Values - Share calculated values and codes by text for easy project collaboration.
 • Built-in Information Pages - Access in-app guides on various types of capacitors and coding standards. Perfect for quick reference or learning.
 • Customize App Appearance - Switch between light and dark themes to personalize your experience.
 

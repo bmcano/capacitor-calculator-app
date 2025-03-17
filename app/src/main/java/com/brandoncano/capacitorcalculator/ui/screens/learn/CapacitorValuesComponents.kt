@@ -16,65 +16,33 @@ import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.data.Tolerance
 import com.brandoncano.capacitorcalculator.data.VoltageRating
-import com.brandoncano.capacitorcalculator.util.FindEIA198Value
 import com.brandoncano.sharedcomponents.composables.AppCard
 import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
 import com.brandoncano.sharedcomponents.text.textStyleCallout
 import com.brandoncano.sharedcomponents.text.textStyleSubhead
-import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 @Preview
 @Composable
 fun ToleranceTable() {
-    Column {
-        Text(
-            text = stringResource(id = R.string.capacitor_values_tolerance_header),
-            style = textStyleTitle()
-        )
-        AppCard(modifier = Modifier.padding(top = 12.dp)) {
-            val col1 = Tolerance.getStandardToleranceLettersList()
-            val col2 = Tolerance.getStandardToleranceList()
-            val colHeader1 = stringResource(id = R.string.capacitor_values_tolerance_letter)
-            val colHeader2 = stringResource(id = R.string.capacitor_values_tolerance_percentage)
-            TableScreen(colHeader1, colHeader2, col1, col2)
-        }
+    AppCard(modifier = Modifier.padding(top = 12.dp)) {
+        val col1 = Tolerance.getStandardToleranceLettersList()
+        val col2 = Tolerance.getStandardToleranceList()
+        val colHeader1 = stringResource(id = R.string.capacitor_values_tolerance_letter)
+        val colHeader2 = stringResource(id = R.string.capacitor_values_tolerance_percentage)
+        TableScreen(colHeader1, colHeader2, col1, col2)
     }
 }
 
 @Preview
 @Composable
 fun VoltageRatingTable() {
-    Column {
-        Text(
-            text = stringResource(id = R.string.capacitor_values_voltage_header),
-            style = textStyleTitle()
-        )
-        AppCard(modifier = Modifier.padding(top = 12.dp)) {
-            val col1 = VoltageRating.getCodeList()
-            val col2 = VoltageRating.getVoltageList()
-            val colHeader1 = stringResource(id = R.string.capacitor_values_voltage_code)
-            val colHeader2 = stringResource(id = R.string.capacitor_values_voltage_values)
-            TableScreen(colHeader1, colHeader2, col1, col2)
-        }
-    }
-}
-
-@Preview
-@Composable
-fun SmdBaseCapacitanceTable() {
-    Column {
-        Text(
-            text = stringResource(id = R.string.cap_eia_198_base_capacitance_value),
-            style = textStyleTitle()
-        )
-        AppCard(modifier = Modifier.padding(top = 12.dp)) {
-            val col1 = FindEIA198Value.table.keys.toList()
-            val col2 =  FindEIA198Value.table.values.map { it -> it.toString() }
-            val colHeader1 = stringResource(id = R.string.cap_eia_198_base_capacitance_col1)
-            val colHeader2 = stringResource(id = R.string.cap_eia_198_base_capacitance_col2)
-            TableScreen(colHeader1, colHeader2, col1, col2)
-        }
+    AppCard(modifier = Modifier.padding(top = 12.dp)) {
+        val col1 = VoltageRating.getCodeList()
+        val col2 = VoltageRating.getVoltageList()
+        val colHeader1 = stringResource(id = R.string.capacitor_values_voltage_code)
+        val colHeader2 = stringResource(id = R.string.capacitor_values_voltage_values)
+        TableScreen(colHeader1, colHeader2, col1, col2)
     }
 }
 
