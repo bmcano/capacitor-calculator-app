@@ -3,11 +3,9 @@ package com.brandoncano.capacitorcalculator.ui.screens.learn
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -23,8 +21,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.data.CapacitorCodeConversions
+import com.brandoncano.capacitorcalculator.ui.composables.BottomScreenSpacer
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
 import com.brandoncano.sharedcomponents.composables.AppDivider
+import com.brandoncano.sharedcomponents.composables.AppLongScreenPreview
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
@@ -71,12 +71,12 @@ private fun CommonCodesScreenContent(paddingValues: PaddingValues) {
         Text(
             text = stringResource(R.string.common_codes_body),
             modifier = Modifier.padding(top = 24.dp, bottom = 24.dp),
-            style = textStyleBody()
+            style = textStyleBody(),
         )
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(vertical = 8.dp)
+                .padding(vertical = 16.dp)
         ) {
             labels.forEach {
                 Text(
@@ -92,12 +92,12 @@ private fun CommonCodesScreenContent(paddingValues: PaddingValues) {
         LazyColumn {
             itemsIndexed(codes) { index, code ->
                 ChartTableRow(code)
-                if (codes.size - 1 != index) {
+                if (codes.lastIndex != index) {
                     AppDivider(modifier = Modifier)
                 }
             }
             item {
-                Spacer(modifier = Modifier.height(48.dp))
+                BottomScreenSpacer()
             }
         }
     }
@@ -122,6 +122,7 @@ private fun ChartTableRow(row: CapacitorCodeConversions) {
 }
 
 @AppScreenPreviews
+@AppLongScreenPreview
 @Composable
 private fun ChartPreview() {
     CapacitorCalculatorTheme {

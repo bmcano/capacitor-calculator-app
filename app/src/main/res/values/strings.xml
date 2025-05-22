@@ -61,7 +61,7 @@
     <string name="capacitor_values_capacitance_bullet_3">"VOLTS shows the capacitor's maximum rated voltage"</string>
     <string name="capacitor_values_tolerance_header">Tolerance</string>
     <string name="capacitor_values_tolerance_subhead">"Tolerance indicates how much the actual capacitance may vary from the labeled value, usually shown as a percentage (e.g., ±10%). A lower tolerance means the capacitor's value is closer to its stated rating."</string>
-    <string name="capacitor_values_tolerance_letter">Tolerance</string>
+    <string name="capacitor_values_tolerance_letter">Symbol</string>
     <string name="capacitor_values_tolerance_percentage">Tolerance (%)</string>
     <string name="capacitor_values_voltage_header">Voltage Rating</string>
     <string name="capacitor_values_voltage_subhead">Voltage Rating is the maximum voltage the capacitor can safely handle. Exceeding this rating risks damaging the capacitor or causing it to fail.</string>

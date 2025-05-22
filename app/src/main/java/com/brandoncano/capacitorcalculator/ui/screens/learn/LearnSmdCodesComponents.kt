@@ -29,6 +29,8 @@ import com.brandoncano.sharedcomponents.composables.AppDivider
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
 import com.brandoncano.sharedcomponents.text.textStyleBody
 import com.brandoncano.sharedcomponents.text.textStyleCallout
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.text.textStyleSubhead
 import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 private data class BaseCapacitanceEntry(val letter: String, val value: Double)
@@ -109,18 +111,18 @@ fun CodeInfoSection(
     Text(
         text = stringResource(headlineRes),
         modifier = Modifier.padding(bottom = 12.dp),
-        style = textStyleTitle(),
+        style = textStyleHeadline(),
     )
     Text(
         text = stringResource(bodyRes),
         modifier = Modifier.padding(bottom = 12.dp),
-        style = textStyleBody().onSurfaceVariant(),
+        style = textStyleSubhead().onSurfaceVariant(),
     )
     EquationCard(stringResource(formulaRes))
     Text(
         text = stringResource(exampleLabelRes),
         modifier = Modifier.padding(vertical = 12.dp),
-        style = textStyleBody().onSurfaceVariant(),
+        style = textStyleSubhead().onSurfaceVariant(),
     )
     EquationCard(stringResource(exampleRes))
 }

@@ -20,14 +20,16 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
-import com.brandoncano.capacitorcalculator.ui.composables.AppBulletList
+import com.brandoncano.capacitorcalculator.ui.composables.BottomScreenSpacer
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
+import com.brandoncano.sharedcomponents.composables.AppBulletList
 import com.brandoncano.sharedcomponents.composables.AppDivider
+import com.brandoncano.sharedcomponents.composables.AppLongScreenPreview
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
 import com.brandoncano.sharedcomponents.text.textStyleSubhead
-import com.brandoncano.sharedcomponents.text.textStyleTitle
 
 @Composable
 fun CapacitorValuesScreen(
@@ -57,52 +59,55 @@ private fun CapacitorValuesScreenContent(paddingValues: PaddingValues) {
             .padding(paddingValues)
             .padding(horizontal = sidePadding),
     ) {
+        Spacer(modifier = Modifier.height(24.dp))
         Text(
             text = stringResource(id = R.string.capacitor_values_capacitance_header),
-            modifier = Modifier.padding(top = 12.dp),
-            style = textStyleTitle()
+            style = textStyleHeadline(),
         )
+        Spacer(modifier = Modifier.height(12.dp))
         Text(
             text = stringResource(id = R.string.capacitor_values_capacitance_subhead),
-            modifier = Modifier.padding(top = 12.dp, bottom = 8.dp),
             style = textStyleSubhead().onSurfaceVariant()
         )
+        Spacer(modifier = Modifier.height(8.dp))
         AppBulletList(
-            items = listOf(
+            bulletStrings = listOf(
                 stringResource(id = R.string.capacitor_values_capacitance_bullet_1),
                 stringResource(id = R.string.capacitor_values_capacitance_bullet_2),
                 stringResource(id = R.string.capacitor_values_capacitance_bullet_3),
-            )
+            ),
+            textStyle = textStyleSubhead().onSurfaceVariant(),
         )
         AppDivider(modifier = Modifier.padding(vertical = 16.dp))
-
         Text(
             text = stringResource(id = R.string.capacitor_values_tolerance_header),
-            style = textStyleTitle()
+            style = textStyleHeadline(),
         )
         Spacer(modifier = Modifier.height(12.dp))
         Text(
             text = stringResource(id = R.string.capacitor_values_tolerance_subhead),
             style = textStyleSubhead().onSurfaceVariant(),
         )
+        Spacer(modifier = Modifier.height(24.dp))
         ToleranceTable()
         Spacer(modifier = Modifier.height(32.dp))
-
         Text(
             text = stringResource(id = R.string.capacitor_values_voltage_header),
-            style = textStyleTitle()
+            style = textStyleHeadline(),
         )
         Spacer(modifier = Modifier.height(12.dp))
         Text(
             text = stringResource(id = R.string.capacitor_values_voltage_subhead),
             style = textStyleSubhead().onSurfaceVariant(),
         )
+        Spacer(modifier = Modifier.height(24.dp))
         VoltageRatingTable()
-        Spacer(modifier = Modifier.height(48.dp))
+        BottomScreenSpacer()
     }
 }
 
 @AppScreenPreviews
+@AppLongScreenPreview
 @Composable
 private fun CapacitorValuesPreview() {
     CapacitorCalculatorTheme {

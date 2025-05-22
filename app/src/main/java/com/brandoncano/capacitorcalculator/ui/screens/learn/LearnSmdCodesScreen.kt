@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.rememberScrollState
@@ -22,14 +21,15 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
+import com.brandoncano.capacitorcalculator.ui.composables.BottomScreenSpacer
 import com.brandoncano.capacitorcalculator.ui.theme.CapacitorCalculatorTheme
-import com.brandoncano.sharedcomponents.composables.AppDivider
+import com.brandoncano.sharedcomponents.composables.AppLongScreenPreview
 import com.brandoncano.sharedcomponents.composables.AppScreenPreviews
 import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 import com.brandoncano.sharedcomponents.text.onSurfaceVariant
 import com.brandoncano.sharedcomponents.text.textStyleBody
-import com.brandoncano.sharedcomponents.text.textStyleCallout
-import com.brandoncano.sharedcomponents.text.textStyleTitle
+import com.brandoncano.sharedcomponents.text.textStyleHeadline
+import com.brandoncano.sharedcomponents.text.textStyleSubhead
 
 @Composable
 fun LearnSmdCapacitorCodesScreen(
@@ -57,18 +57,13 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
             .padding(paddingValues)
-            .padding(horizontal = sidePadding)
-            .imePadding(),
+            .padding(horizontal = sidePadding),
         horizontalAlignment = Alignment.Start,
     ) {
-        Text(
-            text = stringResource(R.string.smd_info_intro_title),
-            modifier = Modifier.padding(vertical = 12.dp),
-            style = textStyleTitle(),
-        )
+        Spacer(modifier = Modifier.height(24.dp))
         Text(
             text = stringResource(R.string.smd_info_intro_body_1),
-            modifier = Modifier.padding(bottom = 12.dp),
+            modifier = Modifier.padding(bottom = 16.dp),
             style = textStyleBody().onSurfaceVariant(),
         )
         Text(
@@ -76,7 +71,6 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
             modifier = Modifier.padding(bottom = 32.dp),
             style = textStyleBody().onSurfaceVariant(),
         )
-
         CodeInfoSection(
             headlineRes = R.string.smd_three_code_title,
             bodyRes = R.string.smd_three_code_body,
@@ -85,7 +79,6 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
             exampleRes = R.string.smd_three_digit_example,
         )
         Spacer(modifier = Modifier.height(32.dp))
-
         CodeInfoSection(
             headlineRes = R.string.smd_four_code_title,
             bodyRes = R.string.smd_four_code_body,
@@ -93,13 +86,11 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
             exampleLabelRes = R.string.smd_four_digit_example_label,
             exampleRes = R.string.smd_four_digit_example,
         )
-        AppDivider(modifier = Modifier.padding(vertical = 16.dp))
         Text(
             text = stringResource(R.string.smd_four_digit_note),
-            modifier = Modifier.padding(bottom = 32.dp),
-            style = textStyleCallout().onSurfaceVariant(),
+            modifier = Modifier.padding(top = 16.dp, bottom = 32.dp),
+            style = textStyleSubhead().onSurfaceVariant(),
         )
-
         CodeInfoSection(
             headlineRes = R.string.smd_eia_198_title,
             bodyRes = R.string.smd_eia_198_body,
@@ -107,22 +98,23 @@ private fun LearnSmdCapacitorCodesScreenContent(paddingValues: PaddingValues) {
             exampleLabelRes = R.string.smd_eia_198_example_label,
             exampleRes = R.string.smd_eia_198_example,
         )
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(32.dp))
         Text(
             text = stringResource(id = R.string.smd_eia_198_base_capacitance_title),
-            style = textStyleTitle(),
+            style = textStyleHeadline(),
         )
         Text(
             text = stringResource(id = R.string.smd_eia_198_base_capacitance_body),
-            modifier = Modifier.padding(vertical = 12.dp),
-            style = textStyleBody().onSurfaceVariant(),
+            modifier = Modifier.padding(top = 12.dp, bottom = 24.dp),
+            style = textStyleSubhead().onSurfaceVariant(),
         )
         SmdBaseCapacitanceTableWithSearch()
-        Spacer(modifier = Modifier.height(48.dp))
+        BottomScreenSpacer()
     }
 }
 
 @AppScreenPreviews
+@AppLongScreenPreview
 @Composable
 private fun LearnSmdCodesPreview() {
     CapacitorCalculatorTheme {

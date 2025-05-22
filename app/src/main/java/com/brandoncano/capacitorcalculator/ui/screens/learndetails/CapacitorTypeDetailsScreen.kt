@@ -20,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.brandoncano.capacitorcalculator.R
 import com.brandoncano.capacitorcalculator.data.CapacitorType
+import com.brandoncano.capacitorcalculator.ui.composables.BottomScreenSpacer
 import com.brandoncano.sharedcomponents.composables.AppTopAppBar
 
 @Composable
@@ -55,6 +56,7 @@ fun InformationDetailsScreen(
                 .padding(horizontal = sidePadding),
             horizontalAlignment = Alignment.Start,
         ) {
+            Spacer(modifier = Modifier.height(32.dp))
             when (type) {
                 CapacitorType.Ceramic -> CeramicView()
                 CapacitorType.Film -> FilmView()
@@ -64,7 +66,7 @@ fun InformationDetailsScreen(
                 CapacitorType.Mica -> MicaView()
                 CapacitorType.Variable -> VariableView()
             }
-            Spacer(modifier = Modifier.height(48.dp))
+            BottomScreenSpacer()
         }
     }
 }
