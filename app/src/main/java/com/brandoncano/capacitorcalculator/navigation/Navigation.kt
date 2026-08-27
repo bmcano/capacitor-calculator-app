@@ -16,7 +16,6 @@ import com.brandoncano.capacitorcalculator.navigation.learn.learnCommonCodes
 import com.brandoncano.capacitorcalculator.navigation.learn.learnSmdCapacitorCodes
 import com.brandoncano.sharedcomponents.data.Apps
 import com.brandoncano.sharedcomponents.navigation.SharedScreens
-import com.brandoncano.sharedcomponents.navigation.donateScreen
 import com.brandoncano.sharedcomponents.navigation.viewOurAppsScreen
 import com.brandoncano.sharedcomponents.utils.OpenLink
 

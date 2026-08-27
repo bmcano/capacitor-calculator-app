@@ -197,6 +197,14 @@
     <string name="smd_eia_198_base_capacitance_text_field_clear_label">Clear search</string>
     <string name="smd_eia_198_base_capacitance_no_results">No results found.</string>
 
+    <!-- Donate screen/components text -->
+    <string name="donate_title">Donate</string>
+    <string name="donate_purchase_button">Continue to payment</string>
+    <string name="donate_body_text">Your donation helps us improve the app and create new features for everyone to enjoy.</string>
+    <string name="donate_headline_text">How much would you like to donate?</string>
+    <string name="donate_footer_text">We appreciate your kindness and support. Thank you for your donation!</string>
+    <string name="donate_error_text">There was an error connecting to Google Play services. Please try again later.</string>
+
     <!-- error messages -->
     <string name="error_invalid_code">Invalid code</string>
     <string name="error_invalid_capacitance">Invalid capacitance</string>
