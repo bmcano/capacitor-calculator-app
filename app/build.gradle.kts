@@ -17,7 +17,7 @@ android {
         minSdk = 24
         targetSdk = 37
         versionCode = 13 // for 2.4.0
-        versionName = "2.4.0-dev"
+        versionName = "2.4.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -33,7 +33,7 @@ android {
         resValue(
             "string",
             "last_updated",
-            "3/16/2025",
+            "8/26/2026",
         )
     }
     buildTypes {
