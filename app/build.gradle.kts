@@ -16,7 +16,7 @@ android {
         applicationId = "com.brandoncano.capacitorcalculator"
         minSdk = 24
         targetSdk = 37
-        versionCode = 13 // for 2.4.0
+        versionCode = 14 // for 2.4.0
         versionName = "2.4.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -69,6 +69,7 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.graphics.path)
     // androidx.compose.ui
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.compose.ui)
